@@ -1,0 +1,343 @@
+# Frontend Mentor - Designo agency website content
+
+## Table of contents
+
+- [About](#about)
+- [App design](#app-design)
+- [Contact](#contact)
+- [Graphic design](#graphic-design)
+- [Home](#home)
+- [Locations](#locations)
+- [Web design](#web-design)
+
+## About
+
+Our Company
+Locations
+Contact
+
+About us
+Founded in 2010, we are a creative agency that produces lasting results for our clients.
+We've partnered with many startups, corporations, and nonprofits alike to craft designs
+that make real impact. We're always looking forward to creating brands, products, and
+digital experiences that connect with our clients' audiences.
+
+World-class talent
+We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully
+crafted from concept to launch, ensuring success in its given market. We are constantly updating
+our skills in a myriad of platforms.
+
+Our team is multi-disciplinary and we are not merely interested in form — content and meaning
+are just as important. We give great importance to craftsmanship, service, and prompt delivery.
+Clients have always been impressed with our high-quality outcomes that encapsulates their
+brand's story and mission.
+
+The real deal
+As strategic partners in our clients' businesses, we are ready to take on any challenge as our own.
+Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every
+opportunity. We make design and technology more accessible and give you tools to measure success.
+
+We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies,
+we inspire audiences to take action and drive real results.
+
+Canada
+See location
+
+Australia
+See location
+
+United Kingdom
+See location
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can
+help your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## App design
+
+Our Company
+Locations
+Contact
+
+App design
+Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.
+
+Airfilter
+Solving the problem of poor indoor air quality by filtering the air
+
+Eyecam
+Product that lets you edit your favorite photos and videos at any time
+
+Faceit
+Get to meet your favorite internet superstar with the faceit app
+
+Todo
+A todo app that features cloud sync with light and dark mode
+
+Loopstudios
+A VR experience app made for Loopstudios
+
+Web Design
+View Projects
+
+Graphic Design
+View Projects
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can help
+your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## Contact
+
+Our Company
+Locations
+Contact
+
+Contact us
+Ready to take it to the next level? Let's talk about your project or idea and find out how
+we can help your business grow. If you are looking for unique digital experiences that's
+relatable to your users, drop us a line.
+
+Name
+Email address
+Phone
+Your message
+Submit
+
+Canada
+See location
+
+Australia
+See location
+
+United Kingdom
+See location
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## Graphic design
+
+Our Company
+Locations
+Contact
+
+Graphic design
+We deliver eye-catching branding materials that are tailored to meet your business objectives.
+
+Tim Brown
+A book cover designed for Tim Brown's new release, 'Change'
+
+Boxed water
+A simple packaging concept made for Boxed Water
+
+Science!
+A poster made in collaboration with the Federal Art Project
+
+App Design
+View Projects
+
+Web Design
+View Projects
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can
+help your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## Home
+
+Our Company
+Locations
+Contact
+
+Award-winning custom designs and digital branding solutions
+
+With over 10 years in the industry, we are experienced in creating fully responsive websites, app design,
+and engaging brand experiences. Find out more about our services.
+
+Learn more
+
+Web Design
+View Projects
+
+App Design
+View Projects
+
+Graphic Design
+View Projects
+
+Passionate
+Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge
+art, design, and technology into exciting new solutions.
+
+Resourceful
+Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer
+collaboration. It guarantees superior results that fulfill our clients' needs.
+
+Friendly
+We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we
+strive to give them the best experience a company can provide.
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## Locations
+
+Our Company
+Locations
+Contact
+
+Canada
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact
+P : +1 253-863-8967
+M : contact@designo.co
+
+Australia
+Designo AU Office
+19 Balonne Street
+New South Wales 2443
+
+Contact
+P : (02) 6720 9092
+M : contact@designo.au
+
+United Kingdom
+Designo UK Office
+13 Colorado Way
+Rhyd-y-fro SA8 9GA
+
+Contact
+P : 078 3115 1400
+M : contact@designo.uk
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can
+help your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
+
+## Web design
+
+Our Company
+Locations
+Contact
+
+Web design
+We build websites that serve as powerful marketing tools and bring memorable brand experiences.
+
+Express
+A multi-carrier shipping website for ecommerce businesses
+
+Transfer
+Site for low-cost money transfers and sending money within seconds
+
+Photon
+A state-of-the-art music player with high-resolution audio and DSP effects
+
+Builder
+Connects users with local contractors based on their location
+
+Blogr
+Blogr is a platform for creating an online blog or publication
+
+Camp
+Get expert training in coding, data, design, and digital marketing
+
+App Design
+View Projects
+
+Graphic Design
+View Projects
+
+Let's talk about your project
+Ready to take it to the next level? Contact us today and find out how our expertise can help
+your business grow.
+Get in touch
+
+Our company
+Locations
+Contact
+
+Designo Central Office
+3886 Wellington Street
+Toronto, Ontario M9C 3J5
+
+Contact Us (Central Office)
+P : +1 253-863-8967
+M : contact@designo.co
