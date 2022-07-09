@@ -1,7 +1,8 @@
 {
-  "collectionName": "components_home_ctas",
+  "collectionName": "components_hero_hero_with_images",
   "info": {
-    "displayName": "CTA",
+    "displayName": "Hero with image",
+    "icon": "images",
     "description": ""
   },
   "options": {},
@@ -12,17 +13,15 @@
     "description": {
       "type": "text"
     },
-    "cta": {
+    "image": {
       "type": "component",
       "repeatable": false,
-      "component": "navigation.link"
+      "component": "shared.media"
     },
     "pattern": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }
