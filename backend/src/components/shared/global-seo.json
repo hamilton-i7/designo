@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_global_seos",
+  "info": {
+    "displayName": "Global SEO",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "siteName": {
+      "type": "string"
+    },
+    "favicon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "shareImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
