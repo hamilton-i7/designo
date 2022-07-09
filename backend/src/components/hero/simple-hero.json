@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hero_simple_heroes",
+  "info": {
+    "displayName": "Simple hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "pattern": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

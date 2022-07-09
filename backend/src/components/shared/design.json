@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_designs",
+  "info": {
+    "displayName": "Design"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
