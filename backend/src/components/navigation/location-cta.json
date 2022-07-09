@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_navigation_location_ctas",
+  "info": {
+    "displayName": "Location CTA"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

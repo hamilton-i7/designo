@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.full-hero"
+    },
+    "locations": {
+      "displayName": "Location CTA",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.location-cta"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    },
+    "traits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.trait"
+    }
+  }
+}

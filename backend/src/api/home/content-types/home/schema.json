@@ -28,7 +28,7 @@
       "displayName": "Trait",
       "type": "component",
       "repeatable": true,
-      "component": "home.trait"
+      "component": "shared.trait"
     },
     "cta": {
       "displayName": "CTA",
