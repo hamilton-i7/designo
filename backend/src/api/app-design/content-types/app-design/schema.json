@@ -4,7 +4,8 @@
   "info": {
     "singularName": "app-design",
     "pluralName": "app-designs",
-    "displayName": "App Design"
+    "displayName": "App Design",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

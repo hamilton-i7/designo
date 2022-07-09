@@ -2,23 +2,21 @@
   "collectionName": "components_navigation_menus",
   "info": {
     "displayName": "Menu",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "logo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
     "links": {
       "displayName": "Link",
       "type": "component",
       "repeatable": true,
       "component": "navigation.link"
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }

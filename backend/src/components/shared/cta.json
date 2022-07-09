@@ -18,11 +18,9 @@
       "component": "navigation.link"
     },
     "pattern": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }

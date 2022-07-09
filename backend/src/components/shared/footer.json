@@ -7,14 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "links": {
       "type": "component",
       "repeatable": true,
@@ -37,6 +29,11 @@
       "type": "component",
       "repeatable": false,
       "component": "contact.contact"
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }

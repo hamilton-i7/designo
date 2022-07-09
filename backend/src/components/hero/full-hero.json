@@ -18,20 +18,14 @@
       "component": "navigation.link"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     },
     "pattern": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }
