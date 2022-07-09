@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_hero_hero_forms",
+  "info": {
+    "displayName": "Hero Form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
+    },
+    "form": {
+      "displayName": "Form",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.form"
+    }
+  }
+}

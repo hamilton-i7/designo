@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_contact_forms",
+  "info": {
+    "displayName": "Form",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "nameLabel": {
+      "type": "string"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "phoneLabel": {
+      "type": "string"
+    },
+    "messageLabel": {
+      "type": "string"
+    }
+  }
+}

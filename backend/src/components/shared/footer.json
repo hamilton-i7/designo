@@ -2,16 +2,18 @@
   "collectionName": "components_page_footers",
   "info": {
     "displayName": "Footer",
-    "icon": "info-circle"
+    "icon": "info-circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "links": {
       "type": "component",
