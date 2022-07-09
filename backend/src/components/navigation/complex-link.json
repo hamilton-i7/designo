@@ -1,7 +1,8 @@
 {
   "collectionName": "components_navigation_complex_links",
   "info": {
-    "displayName": "Complex link"
+    "displayName": "Complex link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,10 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.media"
+    },
+    "url": {
+      "type": "string",
+      "default": "#"
     }
   }
 }
