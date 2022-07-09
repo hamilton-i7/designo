@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "graphic_designs",
+  "info": {
+    "singularName": "graphic-design",
+    "pluralName": "graphic-designs",
+    "displayName": "Graphic Design"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.simple-hero"
+    },
+    "designs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.design"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.complex-link"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    }
+  }
+}

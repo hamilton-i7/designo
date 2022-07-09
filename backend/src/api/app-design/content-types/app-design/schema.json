@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "app_designs",
+  "info": {
+    "singularName": "app-design",
+    "pluralName": "app-designs",
+    "displayName": "App Design"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.simple-hero"
+    },
+    "designs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.design"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.complex-link"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    }
+  }
+}
