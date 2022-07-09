@@ -17,7 +17,7 @@ export const breakpoints = {
 }
 
 export const typography = {
-  fontFamily: ['Jost', 'Arial', 'sans-serif'].join(','),
+  fontFamily: ['Jost', 'sans-serif'].join(','),
   h1: {
     fontSize: '3.2rem',
     fontWeight: 500,
