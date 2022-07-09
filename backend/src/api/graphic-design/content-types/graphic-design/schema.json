@@ -4,7 +4,8 @@
   "info": {
     "singularName": "graphic-design",
     "pluralName": "graphic-designs",
-    "displayName": "Graphic Design"
+    "displayName": "Graphic Design",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,6 +31,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

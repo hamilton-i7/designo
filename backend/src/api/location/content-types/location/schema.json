@@ -4,8 +4,7 @@
   "info": {
     "singularName": "location",
     "pluralName": "locations",
-    "displayName": "Locations",
-    "description": ""
+    "displayName": "Locations"
   },
   "options": {
     "draftAndPublish": true
@@ -13,7 +12,6 @@
   "pluginOptions": {},
   "attributes": {
     "locations": {
-      "displayName": "Location",
       "type": "component",
       "repeatable": true,
       "component": "contact.location"
@@ -22,6 +20,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

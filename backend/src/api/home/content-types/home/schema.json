@@ -35,6 +35,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
