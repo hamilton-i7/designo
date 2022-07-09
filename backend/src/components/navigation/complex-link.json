@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navigation_complex_links",
+  "info": {
+    "displayName": "Complex link"
+  },
+  "options": {},
+  "attributes": {
+    "primaryText": {
+      "type": "string"
+    },
+    "secondaryText": {
+      "type": "string"
+    },
+    "image": {
+      "displayName": "Media",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
+    }
+  }
+}
