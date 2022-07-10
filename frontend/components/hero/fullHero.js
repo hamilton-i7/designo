@@ -10,7 +10,7 @@ const FullHero = ({ title, description, cta, image }) => {
       component='header'
       sx={{ alignItems: 'center', textAlign: 'center' }}>
       <Typography variant='h1'>{title}</Typography>
-      <Typography component='body1'>{description}</Typography>
+      <Typography variant='body1'>{description}</Typography>
       <Button onDark href={cta.url}>
         {cta.label}
       </Button>

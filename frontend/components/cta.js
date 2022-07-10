@@ -6,8 +6,8 @@ import Button from './button/button'
 
 const Cta = ({ cta }) => {
   return (
-    <Stack>
-      <Box sx={{ textAlign: 'center' }}>
+    <Stack component='section' sx={{ textAlign: 'center' }}>
+      <Box>
         <Typography variant='h1' component='h2'>
           {cta.title}
         </Typography>

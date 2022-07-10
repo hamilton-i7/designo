@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { cloneElement, useState } from 'react'
+import PropTypes from 'prop-types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
@@ -13,7 +14,26 @@ import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import Toolbar from '@mui/material/Toolbar'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
 import { getStrapiMedia } from '../lib/media'
+
+const appBarHeight = '9.6rem'
+const mobileIconSize = '2rem'
+
+const ElevationScroll = ({ children }) => {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  })
+
+  return cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  })
+}
+
+ElevationScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+}
 
 const Nav = ({ window, menu, children }) => {
   const logo = getStrapiMedia(menu.logo)
@@ -23,32 +43,33 @@ const Nav = ({ window, menu, children }) => {
     setOpenMobileMenu(!openMobileMenu)
   }
 
-  const mobileToolbar = (
-    <Toolbar>
-      <Link href={logo.href}>
-        <MuiLink>
-          <Box component='img' src={logo.url} alt={logo.alternativeText} />
-        </MuiLink>
-      </Link>
-      <IconButton
-        color='inherit'
-        aria-label={openMobileMenu ? 'close drawer' : 'open drawer'}
-        edge='end'
-        onClick={handleDrawerToggle}
-        sx={{ display: { sm: 'none' } }}>
-        {openMobileMenu ? <CloseIcon /> : <MenuIcon />}
-      </IconButton>
-    </Toolbar>
-  )
-
   const drawer = (
-    <Box onClick={handleDrawerToggle}>
-      {mobileToolbar}
-      <List>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        pt: appBarHeight,
+        backgroundColor: theme => theme.palette.common.black,
+        color: theme => theme.palette.common.white,
+      }}>
+      <List
+        sx={{
+          py: '3rem',
+        }}>
         {menu.links.map(link => (
-          <ListItem key={link.id} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={link.label} />
+          <ListItem
+            key={link.id}
+            disablePadding
+            sx={{
+              py: '0.5rem',
+            }}>
+            <ListItemButton sx={{ px: '2.4rem' }}>
+              <ListItemText
+                primary={link.label}
+                primaryTypographyProps={{
+                  variant: 'subtitle1',
+                  textTransform: 'uppercase',
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -61,30 +82,56 @@ const Nav = ({ window, menu, children }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component='nav' aria-label='extended menu'>
-        <Toolbar>
-          <Link href={logo.href}>
-            <MuiLink>
-              <Box component='img' src={logo.url} alt={logo.alternativeText} />
-            </MuiLink>
-          </Link>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ display: { sm: 'none' } }}>
-            <MenuIcon />
-          </IconButton>
-          <Stack direction='row' sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            {menu.links.map(link => (
-              <Link key={link.id} href={link.url}>
-                <MuiLink underline='hover'>{link.label}</MuiLink>
-              </Link>
-            ))}
-          </Stack>
-        </Toolbar>
-      </AppBar>
+      <ElevationScroll>
+        <AppBar
+          component='nav'
+          aria-label='extended menu'
+          elevation={0}
+          sx={{
+            backgroundColor: theme => theme.palette.common.white,
+            height: appBarHeight,
+            justifyContent: 'center',
+            zIndex: theme => theme.zIndex.drawer + 1,
+          }}>
+          <Toolbar
+            sx={{
+              justifyContent: 'space-between',
+            }}>
+            <Link href={logo.href}>
+              <MuiLink
+                sx={{
+                  width: '60%',
+                  maxWidth: '20.2rem',
+                }}>
+                <Box
+                  component='img'
+                  src={logo.url}
+                  alt={logo.alternativeText}
+                />
+              </MuiLink>
+            </Link>
+            <IconButton
+              color='inherit'
+              aria-label={openMobileMenu ? 'close drawer' : 'open drawer'}
+              edge='start'
+              onClick={handleDrawerToggle}
+              sx={{ display: { sm: 'none' } }}>
+              {openMobileMenu ? (
+                <CloseIcon sx={{ fontSize: mobileIconSize }} />
+              ) : (
+                <MenuIcon sx={{ fontSize: mobileIconSize }} />
+              )}
+            </IconButton>
+            <Stack direction='row' sx={{ display: { xs: 'none', sm: 'flex' } }}>
+              {menu.links.map(link => (
+                <Link key={link.id} href={link.url}>
+                  <MuiLink underline='hover'>{link.label}</MuiLink>
+                </Link>
+              ))}
+            </Stack>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
       <Box component='nav' aria-label='mobile menu'>
         <Drawer
           container={container}

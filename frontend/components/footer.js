@@ -14,7 +14,7 @@ const Footer = ({ footer }) => {
 
   return (
     <Stack component='footer'>
-      <Stack>
+      <Stack component='nav' aria-label='footer menu'>
         <Link href={logo.href}>
           <Box component='img' src={logo.url} alt={logo.alternativeText} />
         </Link>

@@ -5,7 +5,7 @@ import ImageButton from './button/imageButton'
 const Projects = ({ projects }) => {
   return (
     <Box
-      component='section'
+      component='article'
       display='grid'
       gridTemplateColumns='repeat(12, 1fr)'
       gap={2}>

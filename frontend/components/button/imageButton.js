@@ -44,6 +44,7 @@ const ImageSrc = styled('span', {
 const ImageText = ({ primary, secondary }) => {
   return (
     <Stack
+      component='section'
       alignItems='center'
       justifyContent='center'
       sx={{

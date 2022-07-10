@@ -6,7 +6,7 @@ import { getStrapiMedia } from '../lib/media'
 
 const Traits = ({ traits }) => {
   return (
-    <Stack component='section'>
+    <Stack component='aside'>
       {traits.map(trait => (
         <TraitItem key={trait.id} trait={trait} />
       ))}
@@ -21,7 +21,7 @@ const TraitItem = ({ trait }) => {
   return (
     <Stack>
       <Box component='img' src={image.url} alt={image.alternativeText} />
-      <Box>
+      <Box component='section'>
         <Typography variant='h3'>{trait.title}</Typography>
         <Typography variant='body1'>{trait.description}</Typography>
       </Box>

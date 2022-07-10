@@ -1,4 +1,3 @@
-import Typography from '@mui/material/Typography'
 import Cta from '../components/cta'
 import FullHero from '../components/hero/fullHero'
 import Projects from '../components/projects'
