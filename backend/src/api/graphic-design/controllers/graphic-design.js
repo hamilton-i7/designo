@@ -51,6 +51,18 @@ module.exports = createCoreController(
                 },
               },
             },
+            cta: {
+              populate: {
+                link: true,
+                pattern: {
+                  populate: {
+                    mobile: true,
+                    tablet: true,
+                    desktop: true,
+                  },
+                },
+              },
+            },
           },
         }
       );

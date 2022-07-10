@@ -26,7 +26,7 @@ module.exports = createCoreController(
             },
             cta: {
               populate: {
-                cta: true,
+                link: true,
                 pattern: {
                   populate: {
                     mobile: true,

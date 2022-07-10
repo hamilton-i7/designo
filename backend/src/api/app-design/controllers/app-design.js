@@ -60,7 +60,7 @@ module.exports = createCoreController(
                     desktop: true,
                   },
                 },
-                cta: true,
+                link: true,
               },
             },
           },

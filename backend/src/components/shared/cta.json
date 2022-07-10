@@ -12,7 +12,7 @@
     "description": {
       "type": "text"
     },
-    "cta": {
+    "link": {
       "type": "component",
       "repeatable": false,
       "component": "navigation.link"

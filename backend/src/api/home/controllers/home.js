@@ -46,7 +46,7 @@ module.exports = createCoreController("api::home.home", ({ strapi }) => ({
         },
         cta: {
           populate: {
-            cta: true,
+            link: true,
             pattern: {
               populate: {
                 mobile: true,
