@@ -1,4 +1,4 @@
-import React, { cloneElement, useState } from 'react'
+import React, { cloneElement, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -16,8 +16,10 @@ import CloseIcon from '@mui/icons-material/Close'
 import Toolbar from '@mui/material/Toolbar'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import { getStrapiMedia } from '../lib/media'
+import { useSmallScreenMatcher } from '../lib/responsive'
+import { useTheme } from '@mui/material'
 
-const appBarHeight = '9.6rem'
+export const appBarHeight = '9.6rem'
 const mobileIconSize = '2rem'
 
 const ElevationScroll = ({ children }) => {
@@ -39,9 +41,17 @@ const Nav = ({ window, menu, children }) => {
   const logo = getStrapiMedia(menu.logo)
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
 
+  const theme = useTheme()
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
   const handleDrawerToggle = () => {
     setOpenMobileMenu(!openMobileMenu)
   }
+
+  useEffect(() => {
+    if (matchesSmallScreen && openMobileMenu) {
+      setOpenMobileMenu(false)
+    }
+  }, [matchesSmallScreen, openMobileMenu])
 
   const drawer = (
     <Box

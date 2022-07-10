@@ -7,6 +7,8 @@ const Button = ({ onDark, href, children }) => {
     <MuiButton
       variant='contained'
       sx={{
+        p: '1.6rem 2.4rem',
+        borderRadius: '0.8rem',
         ...(onDark && {
           backgroundColor: theme => theme.palette.common.white,
           color: theme => theme.palette.common.black,

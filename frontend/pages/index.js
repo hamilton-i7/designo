@@ -17,6 +17,7 @@ const Home = ({ content }) => {
         description={hero.description}
         cta={hero.cta}
         image={getStrapiMedia(hero.image)}
+        pattern={getStrapiMedia(hero.pattern)}
       />
       <Projects projects={projects} />
       <Traits traits={traits} />
