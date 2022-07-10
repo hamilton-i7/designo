@@ -34,11 +34,6 @@ export const typography = {
     fontWeight: 500,
     lineHeight: '2.6rem',
   },
-  body1: {
-    fontWeight: 400,
-    fontSize: '1.6rem',
-    lineHeight: '2.6rem',
-  },
   subtitle1: {
     fontSize: '2.4rem',
     fontWeight: 400,
@@ -50,6 +45,16 @@ export const typography = {
     fontWeight: 400,
     letterSpacing: '0.2rem',
     lineHeight: '1.4rem',
+  },
+  body1: {
+    fontSize: '1.6rem',
+    fontWeight: 400,
+    lineHeight: '2.6rem',
+  },
+  body2: {
+    fontSize: '1.5rem',
+    fontWeight: 500,
+    letterSpacing: '0.5rem',
   },
   button: {
     fontSize: '1.5rem',

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_contacts",
   "info": {
-    "displayName": "Contact"
+    "displayName": "Contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,9 @@
     },
     "email": {
       "type": "email"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

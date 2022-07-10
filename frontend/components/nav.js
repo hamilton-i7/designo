@@ -61,7 +61,7 @@ const Nav = ({ window, menu, children }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component='nav'>
+      <AppBar component='nav' aria-label='extended menu'>
         <Toolbar>
           <Link href={logo.href}>
             <MuiLink>
@@ -85,7 +85,7 @@ const Nav = ({ window, menu, children }) => {
           </Stack>
         </Toolbar>
       </AppBar>
-      <Box component='nav'>
+      <Box component='nav' aria-label='mobile menu'>
         <Drawer
           container={container}
           anchor='top'
