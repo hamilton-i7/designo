@@ -6,12 +6,13 @@ import { createContext } from 'react'
 import { GlobalStyles, ThemeProvider, CssBaseline } from '@mui/material'
 import { globalStyles } from '../styles/globals'
 import lightTheme from '../styles/theme/lightTheme'
+import Layout from '../components/layout'
 
 export const GlobalContext = createContext({})
 
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps
-  const favicon = global.attributes.seo.favicon.desktop
+  const favicon = global.attributes.seo.favicon
   const { url: faviconUrl } = getStrapiMedia(favicon)
 
   return (
@@ -22,7 +23,9 @@ const MyApp = ({ Component, pageProps }) => {
       <GlobalContext.Provider value={global.attributes}>
         <CssBaseline />
         <GlobalStyles styles={globalStyles} />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </GlobalContext.Provider>
     </ThemeProvider>
   )

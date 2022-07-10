@@ -33,7 +33,7 @@
     "logo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.media"
+      "component": "navigation.media-link"
     }
   }
 }
