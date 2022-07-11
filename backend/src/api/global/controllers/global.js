@@ -58,6 +58,13 @@ module.exports = createCoreController("api::global.global", ({ strapi }) => ({
             contact: true,
           },
         },
+        backgroundPattern: {
+          populate: {
+            mobile: true,
+            tablet: true,
+            desktop: true,
+          },
+        },
       },
     });
 

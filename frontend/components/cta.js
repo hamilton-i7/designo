@@ -36,8 +36,8 @@ const Cta = ({ cta }) => {
           tv: theme.spacing(40),
         }),
         position: 'relative',
-        top: '19rem',
-        mt: theme => theme.spacing(-10),
+        top: { xs: '19rem', lg: '7rem' },
+        mt: theme => ({ xs: theme.spacing(-10), lg: theme.spacing(10) }),
         flexDirection: { lg: 'row' },
       }}>
       <Box

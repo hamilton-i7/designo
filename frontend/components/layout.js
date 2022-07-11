@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <Nav menu={menu}>
-      <Box component='main' role='main'>
+      <Box component='main' role='main' position='relative'>
         {children}
         <Footer footer={footer} />
       </Box>
