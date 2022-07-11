@@ -17,27 +17,42 @@ const Cta = ({ cta }) => {
       component='section'
       sx={{
         alignItems: 'center',
-        textAlign: 'center',
-        p: theme => ({ xs: theme.spacing(8, 3), sm: theme.spacing(7.125) }),
+        justifyContent: { lg: 'space-between' },
+        textAlign: { xs: 'center', lg: 'start' },
+        p: theme => ({
+          xs: theme.spacing(8, 3),
+          sm: theme.spacing(7.125),
+          lg: theme.spacing(8, 12),
+        }),
         background: `no-repeat url(${pattern.url})`,
-        backgroundSize: { xs: '240%', sm: '140%' },
-        backgroundPosition: { xs: 'right', sm: 'center' },
+        backgroundSize: { xs: '240%', sm: '140%', lg: '75%' },
+        backgroundPosition: { xs: 'right', sm: 'center', lg: 'right' },
         backgroundColor: theme => theme.palette.primary.main,
         borderRadius: '1.5rem',
-        mx: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5) }),
+        mx: theme => ({
+          xs: theme.spacing(3),
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          tv: theme.spacing(40),
+        }),
         position: 'relative',
         top: '19rem',
         mt: theme => theme.spacing(-10),
+        flexDirection: { lg: 'row' },
       }}>
       <Box
         sx={{
           color: theme => theme.palette.common.white,
-          mb: theme => theme.spacing(4),
+          mb: theme => ({ xs: theme.spacing(4), lg: 0 }),
         }}>
         <Typography
           variant={matchesSmallScreen ? 'h3' : 'h1'}
           component='h2'
-          sx={{ mb: theme.spacing(2), mx: 'auto', maxWidth: '33.5rem' }}>
+          sx={{
+            mb: theme.spacing(2),
+            mx: { xs: 'auto', lg: 0 },
+            maxWidth: '33.5rem',
+          }}>
           {cta.title}
         </Typography>
         <Typography

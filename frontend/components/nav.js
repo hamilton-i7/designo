@@ -17,7 +17,6 @@ import { getStrapiMedia } from '../lib/media'
 import { useSmallScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
-const appBarHeight = '9.6rem'
 const mobileIconSize = '2rem'
 
 const Nav = ({ window, menu, children }) => {
@@ -40,7 +39,7 @@ const Nav = ({ window, menu, children }) => {
     <Box
       onClick={handleDrawerToggle}
       sx={{
-        pt: appBarHeight,
+        pt: '9.6rem',
         backgroundColor: theme => theme.palette.common.black,
         color: theme => theme.palette.common.white,
       }}>
@@ -77,10 +76,10 @@ const Nav = ({ window, menu, children }) => {
         position='relative'
         sx={{
           backgroundColor: theme => theme.palette.common.white,
-          height: appBarHeight,
+          height: { xs: '9.6rem', desktop: '12rem' },
           justifyContent: 'center',
           zIndex: theme => theme.zIndex.drawer + 1,
-          px: theme => ({ md: theme.spacing(5) }),
+          px: theme => ({ md: theme.spacing(5), lg: theme.spacing(20.625) }),
         }}>
         <Toolbar
           sx={{

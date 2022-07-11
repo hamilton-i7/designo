@@ -1,12 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import ImageButton from './button/imageButton'
-import { useMediumScreenMatcher } from '../lib/responsive'
+import { useLargeScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const Projects = ({ projects }) => {
   const theme = useTheme()
-  const matchesMediumScreen = useMediumScreenMatcher(theme)
+  const matchesLargeScreen = useLargeScreenMatcher(theme)
 
   return (
     <Box
@@ -15,9 +15,14 @@ const Projects = ({ projects }) => {
         display: 'grid',
         gap: theme => theme.spacing(3),
         gridTemplateColumns: 'repeat(12, 1fr)',
-        minHeight: { md: '60rem' },
-        py: theme => theme.spacing(15),
-        px: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5), md: '4%' }),
+        height: { md: '60rem', lg: '64rem' },
+        my: theme => ({ xs: theme.spacing(15), lg: theme.spacing(20) }),
+        mx: theme => ({
+          xs: theme.spacing(3),
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          tv: theme.spacing(40),
+        }),
       }}>
       {projects.map((project, index) => (
         <ProjectItem
@@ -26,7 +31,7 @@ const Projects = ({ projects }) => {
           gridRow={{
             // Create a large grid item for every third project
             xs: 'span 12',
-            sm: index % 3 === 0 && matchesMediumScreen ? 'span 12' : 'span 6',
+            sm: index % 3 === 0 && matchesLargeScreen ? 'span 12' : 'span 6',
           }}
         />
       ))}
@@ -41,7 +46,7 @@ const ProjectItem = ({ project, gridRow }) => {
     <ImageButton
       project={project}
       sx={{
-        gridColumn: { xs: 'span 12', md: 'span 6' },
+        gridColumn: { xs: 'span 12', lg: 'span 6' },
         gridRow,
         height: { sm: '20rem', md: 'auto' },
       }}

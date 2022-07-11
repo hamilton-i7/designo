@@ -9,8 +9,14 @@ const Traits = ({ traits }) => {
     <Stack
       component='aside'
       sx={{
-        px: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5) }),
-        gap: theme => theme.spacing(10),
+        mx: theme => ({
+          xs: theme.spacing(3),
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          tv: theme.spacing(40),
+        }),
+        gap: theme => ({ xs: theme.spacing(10), lg: theme.spacing(3.75) }),
+        flexDirection: { lg: 'row' },
       }}>
       {traits.map(trait => (
         <TraitItem key={trait.id} trait={trait} />
@@ -28,7 +34,7 @@ const TraitItem = ({ trait }) => {
     <Stack
       alignItems='center'
       sx={{
-        flexDirection: { sm: 'row' },
+        flexDirection: { sm: 'row', lg: 'column' },
         gap: theme => ({ sm: theme.spacing(2), tablet: theme.spacing(6) }),
       }}>
       <Box
@@ -37,21 +43,25 @@ const TraitItem = ({ trait }) => {
         alt={image.alternativeText}
         sx={{
           background: `center / cover no-repeat url(${pattern.url})`,
-          width: '65%',
-          maxWidth: '20.2rem',
+          width: '20.2rem',
+          // maxWidth: '20.2rem',
         }}
       />
       <Box
         component='section'
         sx={{
-          textAlign: { xs: 'center', sm: 'start' },
+          textAlign: { xs: 'center', sm: 'start', lg: 'center' },
         }}>
         <Typography
           variant='h4'
           sx={{
             textTransform: 'uppercase',
-            mb: theme => ({ xs: theme.spacing(4), sm: theme.spacing(2) }),
-            mt: '4.8rem',
+            mb: theme => ({
+              xs: theme.spacing(4),
+              sm: theme.spacing(2),
+              lg: theme.spacing(4),
+            }),
+            mt: theme => ({ xs: theme.spacing(6), lg: theme.spacing(0) }),
           }}>
           {trait.title}
         </Typography>

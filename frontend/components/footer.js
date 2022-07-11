@@ -23,6 +23,8 @@ const Footer = ({ footer }) => {
         p: theme => ({
           xs: theme.spacing(31.25, 3, 8),
           sm: theme.spacing(31.25, 5, 10),
+          lg: theme.spacing(31.25, 20.626, 9),
+          tv: theme.spacing(31.25, 40, 9),
         }),
         color: theme => theme.palette.common.white,
       }}>

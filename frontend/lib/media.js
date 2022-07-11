@@ -1,6 +1,10 @@
 import { useTheme } from '@mui/material'
 import { getStrapiURL } from './api'
-import { useMediumScreenMatcher, useSmallScreenMatcher } from './responsive'
+import {
+  useLargeScreenMatcher,
+  useMediumScreenMatcher,
+  useSmallScreenMatcher,
+} from './responsive'
 
 /**
  *
@@ -25,9 +29,9 @@ export const getStrapiMedia = media => {
 const getMediaDeviceSource = media => {
   const theme = useTheme()
   const matchesSmallScreen = useSmallScreenMatcher(theme)
-  const matchesMediumScreen = useMediumScreenMatcher(theme)
+  const matchesLargeScreen = useLargeScreenMatcher(theme)
 
-  const device = matchesMediumScreen
+  const device = matchesLargeScreen
     ? 'desktop'
     : matchesSmallScreen
     ? 'tablet'
