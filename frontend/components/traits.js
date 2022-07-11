@@ -9,7 +9,7 @@ const Traits = ({ traits }) => {
     <Stack
       component='aside'
       sx={{
-        px: '2.4rem',
+        px: { xs: '2.4rem', sm: '4rem' },
         gap: '8rem',
       }}>
       {traits.map(trait => (
@@ -25,35 +25,38 @@ const TraitItem = ({ trait }) => {
   const image = getStrapiMedia(trait.image)
   const pattern = getStrapiMedia(trait.pattern)
   return (
-    <Stack>
-      <Stack alignItems='center'>
-        <Box
-          component='img'
-          src={image.url}
-          alt={image.alternativeText}
+    <Stack
+      alignItems='center'
+      sx={{
+        flexDirection: { sm: 'row' },
+        gap: { sm: '1.6rem', tablet: '4.8rem' },
+      }}>
+      <Box
+        component='img'
+        src={image.url}
+        alt={image.alternativeText}
+        sx={{
+          background: `center / cover no-repeat url(${pattern.url})`,
+          width: '65%',
+          maxWidth: '20.2rem',
+        }}
+      />
+      <Box
+        component='section'
+        sx={{
+          textAlign: { xs: 'center', sm: 'start' },
+        }}>
+        <Typography
+          variant='h4'
           sx={{
-            background: `center / cover no-repeat url(${pattern.url})`,
-            width: '65%',
-            maxWidth: '20.2rem',
-          }}
-        />
-        <Box
-          component='section'
-          sx={{
-            textAlign: 'center',
+            textTransform: 'uppercase',
+            mb: { xs: '3.2rem', sm: '1.6rem' },
+            mt: '4.8rem',
           }}>
-          <Typography
-            variant='h3'
-            sx={{
-              textTransform: 'uppercase',
-              mb: '3.2rem',
-              mt: '4.8rem',
-            }}>
-            {trait.title}
-          </Typography>
-          <Typography variant='body1'>{trait.description}</Typography>
-        </Box>
-      </Stack>
+          {trait.title}
+        </Typography>
+        <Typography variant='body1'>{trait.description}</Typography>
+      </Box>
     </Stack>
   )
 }

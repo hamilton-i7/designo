@@ -82,11 +82,7 @@ const ImageText = ({ primary, secondary }) => {
         {primary}
       </Typography>
       <Stack direction='row' gap='1.6rem' alignItems='center'>
-        <Typography
-          variant='button'
-          sx={{
-            letterSpacing: '0.5rem',
-          }}>
+        <Typography variant='h5' component='span'>
           {secondary}
         </Typography>
         <ArrowForwardIcon

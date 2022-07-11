@@ -22,17 +22,37 @@ export const typography = {
     fontSize: '3.2rem',
     fontWeight: 500,
     lineHeight: '3.6rem',
+    [`@media (min-width:${breakpoints.values.tablet}px)`]: {
+      fontSize: '4.8rem',
+      lineHeight: '4.8rem',
+    },
   },
   h2: {
     fontSize: '2.8rem',
     fontWeight: 500,
     letterSpacing: '0.14rem',
     lineHeight: '3.6rem',
+    [`@media (min-width:${breakpoints.values.tablet}px)`]: {
+      fontSize: '4rem',
+      lineHeight: '4.8rem',
+      letterSpacing: '0.2rem',
+    },
   },
   h3: {
+    fontSize: '4rem',
+    fontWeight: 500,
+    lineHeight: '4rem',
+  },
+  h4: {
     fontSize: '2rem',
     fontWeight: 500,
     lineHeight: '2.6rem',
+    letterSpacing: '0.5rem',
+  },
+  h5: {
+    fontSize: '1.5rem',
+    fontWeight: 500,
+    letterSpacing: '0.5rem',
   },
   subtitle1: {
     fontSize: '2.4rem',

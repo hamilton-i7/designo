@@ -127,10 +127,22 @@ const Nav = ({ window, menu, children }) => {
                 <MenuIcon sx={{ fontSize: mobileIconSize }} />
               )}
             </IconButton>
-            <Stack direction='row' sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            <Stack
+              direction='row'
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                gap: { sm: '2.4rem', tablet: '4.2rem' },
+              }}>
               {menu.links.map(link => (
                 <Link key={link.id} href={link.url}>
-                  <MuiLink underline='hover'>{link.label}</MuiLink>
+                  <MuiLink
+                    underline='hover'
+                    sx={{
+                      color: theme => theme.palette.common.black,
+                      textTransform: 'uppercase',
+                    }}>
+                    {link.label}
+                  </MuiLink>
                 </Link>
               ))}
             </Stack>

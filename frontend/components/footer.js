@@ -20,7 +20,7 @@ const Footer = ({ footer }) => {
       component='footer'
       sx={{
         backgroundColor: theme => theme.palette.common.black,
-        p: '25rem 2.4rem 6.4rem',
+        p: { xs: '25rem 2.4rem 6.4rem', sm: '25rem 4rem 8rem' },
         color: theme => theme.palette.common.white,
       }}>
       <Stack
@@ -29,6 +29,8 @@ const Footer = ({ footer }) => {
         sx={{
           alignItems: 'center',
           textAlign: 'center',
+          flexDirection: { sm: 'row' },
+          justifyContent: { sm: 'space-between' },
         }}>
         <Link href={logo.href}>
           <Box
@@ -42,7 +44,6 @@ const Footer = ({ footer }) => {
           />
         </Link>
         <Divider
-          light
           sx={{
             borderColor: theme => alpha(theme.palette.common.white, 0.1),
             display: { xs: 'block', sm: 'none' },
@@ -50,7 +51,11 @@ const Footer = ({ footer }) => {
             my: '3.2rem',
           }}
         />
-        <Stack gap='3.2rem'>
+        <Stack
+          sx={{
+            flexDirection: { sm: 'row' },
+            gap: { xs: '3.2rem', sm: '0.8rem', tablet: '4.2rem' },
+          }}>
           {footer.links.map(link => (
             <Link key={link.id} href={link.url}>
               <MuiLink
@@ -64,11 +69,23 @@ const Footer = ({ footer }) => {
           ))}
         </Stack>
       </Stack>
+      <Divider
+        sx={{
+          borderColor: theme => alpha(theme.palette.common.white, 0.1),
+          display: { xs: 'none', sm: 'block' },
+          width: '100%',
+          mt: '4rem',
+          mb: '3.2rem',
+        }}
+      />
       <Stack
         sx={{
-          textAlign: 'center',
-          gap: '4rem',
-          mt: '4rem',
+          textAlign: { xs: 'center', tablet: 'start' },
+          gap: { xs: '4rem', tablet: 0 },
+          mt: { xs: '4rem', sm: 0 },
+          flexDirection: { tablet: 'row' },
+          alignItems: { tablet: 'end' },
+          justifyContent: { tablet: 'space-between' },
         }}>
         <Typography
           variant='body1'

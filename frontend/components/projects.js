@@ -1,8 +1,13 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import ImageButton from './button/imageButton'
+import { useMediumScreenMatcher } from '../lib/responsive'
+import { useTheme } from '@mui/material'
 
 const Projects = ({ projects }) => {
+  const theme = useTheme()
+  const matchesMediumScreen = useMediumScreenMatcher(theme)
+
   return (
     <Box
       component='article'
@@ -10,7 +15,8 @@ const Projects = ({ projects }) => {
         display: 'grid',
         gap: '2.4rem',
         gridTemplateColumns: 'repeat(12, 1fr)',
-        p: '12rem 2.4rem',
+        py: '12rem',
+        px: { xs: '2.4rem', sm: '4rem' },
       }}>
       {projects.map((project, index) => (
         <ProjectItem
@@ -19,7 +25,7 @@ const Projects = ({ projects }) => {
           gridRow={{
             // Create a large grid item for every third project
             xs: 'span 12',
-            sm: index % 3 === 0 ? 'span 12' : 'span 6',
+            sm: index % 3 === 0 && matchesMediumScreen ? 'span 12' : 'span 6',
           }}
         />
       ))}
@@ -34,8 +40,9 @@ const ProjectItem = ({ project, gridRow }) => {
     <ImageButton
       project={project}
       sx={{
-        gridColumn: { xs: 'span 12', sm: 'span 6' },
+        gridColumn: { xs: 'span 12', md: 'span 6' },
         gridRow,
+        height: { sm: '20rem' },
       }}
     />
   )

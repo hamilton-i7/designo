@@ -13,9 +13,11 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
         textAlign: 'center',
         background: `left 65% / 150% no-repeat url(${pattern.url})`,
         backgroundColor: theme => theme.palette.primary.main,
-        p: '8rem 2.4rem 0',
+        p: { xs: '8rem 2.4rem 0', sm: '6rem 5.8rem 0' },
         color: theme => theme.palette.common.white,
         overflow: 'hidden',
+        mx: { sm: '4rem' },
+        borderRadius: { sm: '1.5rem' },
       }}>
       <Typography variant='h1' sx={{ mb: '1.4rem' }}>
         {title}
