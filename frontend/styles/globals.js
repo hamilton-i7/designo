@@ -53,8 +53,8 @@ export const typography = {
   },
   body2: {
     fontSize: '1.5rem',
-    fontWeight: 500,
-    letterSpacing: '0.5rem',
+    fontWeight: 400,
+    lineHeight: '2.5rem',
   },
   button: {
     fontSize: '1.5rem',

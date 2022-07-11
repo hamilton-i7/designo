@@ -13,7 +13,12 @@ const Footer = ({ footer }) => {
   const { address, contact } = footer
 
   return (
-    <Stack component='footer'>
+    <Stack
+      component='footer'
+      sx={{
+        backgroundColor: theme => theme.palette.common.black,
+        pt: '25rem',
+      }}>
       <Stack component='nav' aria-label='footer menu'>
         <Link href={logo.href}>
           <Box component='img' src={logo.url} alt={logo.alternativeText} />

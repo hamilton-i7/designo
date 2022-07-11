@@ -11,7 +11,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
       sx={{
         alignItems: 'center',
         textAlign: 'center',
-        background: `center / cover no-repeat url(${pattern.url})`,
+        background: `left 65% / 150% no-repeat url(${pattern.url})`,
         backgroundColor: theme => theme.palette.primary.main,
         p: '8rem 2.4rem 0',
         color: theme => theme.palette.common.white,
@@ -20,7 +20,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
       <Typography variant='h1' sx={{ mb: '1.4rem' }}>
         {title}
       </Typography>
-      <Typography variant='body1' sx={{ mb: '2.4rem', fontSize: '1.5rem' }}>
+      <Typography variant='body2' sx={{ mb: '2.4rem' }}>
         {description}
       </Typography>
       <Button onDark href={cta.url}>
