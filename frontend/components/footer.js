@@ -57,10 +57,7 @@ const Footer = ({ footer }) => {
                 underline='hover'
                 color='inherit'
                 variant='subtitle2'
-                textTransform='uppercase'
-                sx={{
-                  opacity: footerTextOpacity,
-                }}>
+                textTransform='uppercase'>
                 {link.label}
               </MuiLink>
             </Link>
