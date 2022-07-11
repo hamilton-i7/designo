@@ -6,16 +6,20 @@ const Projects = ({ projects }) => {
   return (
     <Box
       component='article'
-      display='grid'
-      gridTemplateColumns='repeat(12, 1fr)'
-      gap={2}>
+      sx={{
+        display: 'grid',
+        gap: '2.4rem',
+        gridTemplateColumns: 'repeat(12, 1fr)',
+        p: '12rem 2.4rem',
+      }}>
       {projects.map((project, index) => (
         <ProjectItem
           key={project.id}
           project={project}
           gridRow={{
             // Create a large grid item for every third project
-            xs: index % 3 === 0 ? '1 / 3' : 1,
+            xs: 'span 12',
+            sm: index % 3 === 0 ? 'span 12' : 'span 6',
           }}
         />
       ))}
@@ -30,7 +34,7 @@ const ProjectItem = ({ project, gridRow }) => {
     <ImageButton
       project={project}
       sx={{
-        gridColumn: { xs: '1 / 12' },
+        gridColumn: { xs: 'span 12', sm: 'span 6' },
         gridRow,
       }}
     />

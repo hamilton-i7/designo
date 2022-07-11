@@ -14,9 +14,22 @@ const ImageButton = ({ project, sx }) => {
       <ButtonBase
         sx={{
           position: 'relative',
+          borderRadius: '1.5rem',
+          color: theme => theme.palette.common.white,
+          textTransform: 'uppercase',
+          borderRadius: '1.5rem',
+          overflow: 'hidden',
+          '&:hover, &.Mui-focusVisible': {
+            zIndex: 1,
+            '& .MuiImageBackdrop-root': {
+              opacity: 0.5,
+              backgroundColor: theme => theme.palette.primary.main,
+            },
+          },
           ...sx,
         }}>
         <ImageSrc url={backgroundImage.url} />
+        <ImageBackdrop className='MuiImageBackdrop-root' />
         <ImageText
           primary={project.primaryText}
           secondary={project.secondaryText}
@@ -41,6 +54,17 @@ const ImageSrc = styled('span', {
   }),
 }))
 
+const ImageBackdrop = styled('span')(({ theme }) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  backgroundColor: theme.palette.common.black,
+  opacity: 0.45,
+  transition: theme.transitions.create(['background-color', 'opacity']),
+}))
+
 const ImageText = ({ primary, secondary }) => {
   return (
     <Stack
@@ -54,10 +78,17 @@ const ImageText = ({ primary, secondary }) => {
         top: 0,
         bottom: 0,
       }}>
-      <Typography variant='h2'>{primary}</Typography>
-      <Stack direction='row' alignItems='center'>
+      <Typography variant='h2' mb='1.2rem'>
+        {primary}
+      </Typography>
+      <Stack direction='row' gap='1.6rem' alignItems='center'>
         <Typography variant='body2'>{secondary}</Typography>
-        <ArrowForwardIcon />
+        <ArrowForwardIcon
+          sx={{
+            fontSize: '0.8rem',
+            color: theme => theme.palette.primary.main,
+          }}
+        />
       </Stack>
     </Stack>
   )
