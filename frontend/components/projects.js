@@ -13,10 +13,11 @@ const Projects = ({ projects }) => {
       component='article'
       sx={{
         display: 'grid',
-        gap: '2.4rem',
+        gap: theme => theme.spacing(3),
         gridTemplateColumns: 'repeat(12, 1fr)',
-        py: '12rem',
-        px: { xs: '2.4rem', sm: '4rem' },
+        minHeight: { md: '60rem' },
+        py: theme => theme.spacing(15),
+        px: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5), md: '4%' }),
       }}>
       {projects.map((project, index) => (
         <ProjectItem
@@ -42,7 +43,7 @@ const ProjectItem = ({ project, gridRow }) => {
       sx={{
         gridColumn: { xs: 'span 12', md: 'span 6' },
         gridRow,
-        height: { sm: '20rem' },
+        height: { sm: '20rem', md: 'auto' },
       }}
     />
   )

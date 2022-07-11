@@ -9,8 +9,8 @@ const Traits = ({ traits }) => {
     <Stack
       component='aside'
       sx={{
-        px: { xs: '2.4rem', sm: '4rem' },
-        gap: '8rem',
+        px: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5) }),
+        gap: theme => theme.spacing(10),
       }}>
       {traits.map(trait => (
         <TraitItem key={trait.id} trait={trait} />
@@ -29,7 +29,7 @@ const TraitItem = ({ trait }) => {
       alignItems='center'
       sx={{
         flexDirection: { sm: 'row' },
-        gap: { sm: '1.6rem', tablet: '4.8rem' },
+        gap: theme => ({ sm: theme.spacing(2), tablet: theme.spacing(6) }),
       }}>
       <Box
         component='img'
@@ -50,7 +50,7 @@ const TraitItem = ({ trait }) => {
           variant='h4'
           sx={{
             textTransform: 'uppercase',
-            mb: { xs: '3.2rem', sm: '1.6rem' },
+            mb: theme => ({ xs: theme.spacing(4), sm: theme.spacing(2) }),
             mt: '4.8rem',
           }}>
           {trait.title}

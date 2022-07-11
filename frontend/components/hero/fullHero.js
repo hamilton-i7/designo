@@ -11,18 +11,23 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
       sx={{
         alignItems: 'center',
         textAlign: 'center',
-        background: `left 65% / 150% no-repeat url(${pattern.url})`,
+        background: `no-repeat url(${pattern.url})`,
+        backgroundPosition: { xs: 'left 65%', tablet: '155% 65%' },
+        backgroundSize: { xs: '150%', tablet: '81%' },
         backgroundColor: theme => theme.palette.primary.main,
-        p: { xs: '8rem 2.4rem 0', sm: '6rem 5.8rem 0' },
+        p: theme => ({
+          xs: theme.spacing(10, 3, 0),
+          sm: theme.spacing(7.5, 7.25, 0),
+        }),
         color: theme => theme.palette.common.white,
         overflow: 'hidden',
-        mx: { sm: '4rem' },
+        mx: theme => ({ sm: theme.spacing(5) }),
         borderRadius: { sm: '1.5rem' },
       }}>
-      <Typography variant='h1' sx={{ mb: '1.4rem' }}>
+      <Typography variant='h1' sx={{ mb: theme => theme.spacing(1.75) }}>
         {title}
       </Typography>
-      <Typography variant='body2' sx={{ mb: '2.4rem' }}>
+      <Typography variant='body2' sx={{ mb: theme => theme.spacing(3) }}>
         {description}
       </Typography>
       <Button onDark href={cta.url}>
@@ -33,7 +38,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
           background: `top / 145% no-repeat url(${image.url})`,
           width: '32.7rem',
           height: '41rem',
-          mt: '-8rem',
+          mt: theme => theme.spacing(-10),
         }}
       />
     </Stack>

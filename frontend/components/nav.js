@@ -46,11 +46,11 @@ const Nav = ({ window, menu, children }) => {
       }}>
       <List
         sx={{
-          py: '3rem',
+          py: theme => theme.spacing(3.75),
         }}>
         {menu.links.map(link => (
           <ListItem key={link.id} disablePadding>
-            <ListItemButton sx={{ p: '1.5rem 2.4rem' }}>
+            <ListItemButton sx={{ p: theme => theme.spacing(1.875, 3) }}>
               <ListItemText
                 primary={link.label}
                 primaryTypographyProps={{
@@ -80,6 +80,7 @@ const Nav = ({ window, menu, children }) => {
           height: appBarHeight,
           justifyContent: 'center',
           zIndex: theme => theme.zIndex.drawer + 1,
+          px: theme => ({ md: theme.spacing(5) }),
         }}>
         <Toolbar
           sx={{
@@ -110,12 +111,16 @@ const Nav = ({ window, menu, children }) => {
             direction='row'
             sx={{
               display: { xs: 'none', sm: 'flex' },
-              gap: { sm: '2.4rem', tablet: '4.2rem' },
+              gap: theme => ({
+                sm: theme.spacing(3),
+                tablet: theme.spacing(5.25),
+              }),
             }}>
             {menu.links.map(link => (
               <Link key={link.id} href={link.url}>
                 <MuiLink
                   underline='hover'
+                  variant='subtitle2'
                   sx={{
                     color: theme => theme.palette.common.black,
                     textTransform: 'uppercase',

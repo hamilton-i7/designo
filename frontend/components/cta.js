@@ -18,22 +18,26 @@ const Cta = ({ cta }) => {
       sx={{
         alignItems: 'center',
         textAlign: 'center',
-        p: { xs: '6.4rem 2.4rem', sm: '5.7rem' },
+        p: theme => ({ xs: theme.spacing(8, 3), sm: theme.spacing(7.125) }),
         background: `no-repeat url(${pattern.url})`,
         backgroundSize: { xs: '240%', sm: '140%' },
         backgroundPosition: { xs: 'right', sm: 'center' },
         backgroundColor: theme => theme.palette.primary.main,
         borderRadius: '1.5rem',
-        mx: { xs: '2.4rem', sm: '4rem' },
+        mx: theme => ({ xs: theme.spacing(3), sm: theme.spacing(5) }),
         position: 'relative',
         top: '19rem',
-        mt: '-8rem',
+        mt: theme => theme.spacing(-10),
       }}>
-      <Box sx={{ color: theme => theme.palette.common.white, mb: '3.2rem' }}>
+      <Box
+        sx={{
+          color: theme => theme.palette.common.white,
+          mb: theme => theme.spacing(4),
+        }}>
         <Typography
           variant={matchesSmallScreen ? 'h3' : 'h1'}
           component='h2'
-          sx={{ mb: '1.6rem', mx: 'auto', maxWidth: '33.5rem' }}>
+          sx={{ mb: theme.spacing(2), mx: 'auto', maxWidth: '33.5rem' }}>
           {cta.title}
         </Typography>
         <Typography

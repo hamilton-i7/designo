@@ -20,7 +20,10 @@ const Footer = ({ footer }) => {
       component='footer'
       sx={{
         backgroundColor: theme => theme.palette.common.black,
-        p: { xs: '25rem 2.4rem 6.4rem', sm: '25rem 4rem 8rem' },
+        p: theme => ({
+          xs: theme.spacing(31.25, 3, 8),
+          sm: theme.spacing(31.25, 5, 10),
+        }),
         color: theme => theme.palette.common.white,
       }}>
       <Stack
@@ -48,13 +51,17 @@ const Footer = ({ footer }) => {
             borderColor: theme => alpha(theme.palette.common.white, 0.1),
             display: { xs: 'block', sm: 'none' },
             width: '100%',
-            my: '3.2rem',
+            my: theme => theme.spacing(4),
           }}
         />
         <Stack
           sx={{
             flexDirection: { sm: 'row' },
-            gap: { xs: '3.2rem', sm: '0.8rem', tablet: '4.2rem' },
+            gap: theme => ({
+              xs: theme.spacing(4),
+              sm: theme.spacing(1),
+              tablet: theme.spacing(5.25),
+            }),
           }}>
           {footer.links.map(link => (
             <Link key={link.id} href={link.url}>
@@ -74,15 +81,15 @@ const Footer = ({ footer }) => {
           borderColor: theme => alpha(theme.palette.common.white, 0.1),
           display: { xs: 'none', sm: 'block' },
           width: '100%',
-          mt: '4rem',
-          mb: '3.2rem',
+          mt: theme => theme.spacing(5),
+          mb: theme => theme.spacing(4),
         }}
       />
       <Stack
         sx={{
           textAlign: { xs: 'center', tablet: 'start' },
-          gap: { xs: '4rem', tablet: 0 },
-          mt: { xs: '4rem', sm: 0 },
+          gap: theme => ({ xs: theme.spacing(5), tablet: 0 }),
+          mt: theme => ({ xs: theme.spacing(5), sm: 0 }),
           flexDirection: { tablet: 'row' },
           alignItems: { tablet: 'end' },
           justifyContent: { tablet: 'space-between' },
