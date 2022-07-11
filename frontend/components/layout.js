@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Nav, { appBarHeight } from './nav'
+import Nav from './nav'
 import Toolbar from '@mui/material/Toolbar'
 import Box from '@mui/material/Box'
 import { GlobalContext } from '../pages/_app'
@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
   return (
     <Nav menu={menu}>
       <Box component='main' role='main'>
-        <Toolbar sx={{ height: appBarHeight }} />
         {children}
         <Footer footer={footer} />
       </Box>

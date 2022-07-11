@@ -26,7 +26,7 @@ const Cta = ({ cta }) => {
         borderRadius: '1.5rem',
         mx: { xs: '2.4rem', sm: '4rem' },
         position: 'relative',
-        top: '4%',
+        top: '19rem',
         mt: '-8rem',
       }}>
       <Box sx={{ color: theme => theme.palette.common.white, mb: '3.2rem' }}>
