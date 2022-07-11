@@ -29,6 +29,7 @@ const SocialButton = ({ socialMedia, url, sx }) => {
       href={url}
       sx={{
         fontSize: '2.4rem',
+        color: 'inherit',
         ...sx,
       }}>
       {icon}

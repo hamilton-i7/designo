@@ -66,13 +66,8 @@ const Nav = ({ window, menu, children }) => {
           py: '3rem',
         }}>
         {menu.links.map(link => (
-          <ListItem
-            key={link.id}
-            disablePadding
-            sx={{
-              py: '0.5rem',
-            }}>
-            <ListItemButton sx={{ px: '2.4rem' }}>
+          <ListItem key={link.id} disablePadding>
+            <ListItemButton sx={{ p: '1.5rem 2.4rem' }}>
               <ListItemText
                 primary={link.label}
                 primaryTypographyProps={{
