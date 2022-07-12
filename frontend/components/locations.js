@@ -7,7 +7,11 @@ import Button from './button/button'
 
 const Locations = ({ locations }) => {
   return (
-    <Stack>
+    <Stack
+      sx={{
+        m: theme => theme.spacing(15, 3),
+        gap: theme => theme.spacing(6),
+      }}>
       {locations.map(location => (
         <LocationItem key={location.id} location={location} />
       ))}
@@ -22,7 +26,11 @@ const LocationItem = ({ location }) => {
   const pattern = getStrapiMedia(location.pattern)
 
   return (
-    <Stack>
+    <Stack
+      sx={{
+        alignItems: 'center',
+        textAlign: 'center',
+      }}>
       <Box component='figure'>
         <Box
           component='img'
@@ -31,6 +39,7 @@ const LocationItem = ({ location }) => {
           sx={{
             background: `center / cover no-repeat url(${pattern.url})`,
             width: '20.2rem',
+            mx: 'auto',
           }}
         />
         <Typography
@@ -38,12 +47,8 @@ const LocationItem = ({ location }) => {
           component='figcaption'
           sx={{
             textTransform: 'uppercase',
-            mb: theme => ({
-              xs: theme.spacing(4),
-              sm: theme.spacing(2),
-              lg: theme.spacing(4),
-            }),
-            mt: theme => ({ xs: theme.spacing(6), lg: theme.spacing(0) }),
+            mb: theme => theme.spacing(4),
+            mt: theme => theme.spacing(6),
           }}>
           {location.country}
         </Typography>
