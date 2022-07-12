@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "name": {
+    "country": {
       "type": "string"
     },
     "cta": {
@@ -15,6 +15,11 @@
       "component": "navigation.link"
     },
     "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
+    },
+    "pattern": {
       "type": "component",
       "repeatable": false,
       "component": "shared.media"

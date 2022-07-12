@@ -2,41 +2,27 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../../../lib/media'
+import { getStrapiMedia } from '../lib/media'
+import Button from './button/button'
 
-const Traits = ({ traits }) => {
+const Locations = ({ locations }) => {
   return (
-    <Stack
-      component='aside'
-      sx={{
-        mx: theme => ({
-          xs: theme.spacing(3),
-          sm: theme.spacing(5),
-          lg: theme.spacing(20.625),
-          tv: theme.spacing(40),
-        }),
-        gap: theme => ({ xs: theme.spacing(10), lg: theme.spacing(3.75) }),
-        flexDirection: { lg: 'row' },
-      }}>
-      {traits.map(trait => (
-        <TraitItem key={trait.id} trait={trait} />
+    <Stack>
+      {locations.map(location => (
+        <LocationItem key={location.id} location={location} />
       ))}
     </Stack>
   )
 }
 
-export default Traits
+export default Locations
 
-const TraitItem = ({ trait }) => {
-  const image = getStrapiMedia(trait.image)
-  const pattern = getStrapiMedia(trait.pattern)
+const LocationItem = ({ location }) => {
+  const image = getStrapiMedia(location.image)
+  const pattern = getStrapiMedia(location.pattern)
+
   return (
-    <Stack
-      alignItems='center'
-      sx={{
-        flexDirection: { sm: 'row', lg: 'column' },
-        gap: theme => ({ sm: theme.spacing(2), tablet: theme.spacing(6) }),
-      }}>
+    <Stack>
       <Box
         component='img'
         src={image.url}
@@ -62,9 +48,9 @@ const TraitItem = ({ trait }) => {
             }),
             mt: theme => ({ xs: theme.spacing(6), lg: theme.spacing(0) }),
           }}>
-          {trait.title}
+          {location.title}
         </Typography>
-        <Typography variant='body1'>{trait.description}</Typography>
+        <Button href={location.cta.url}>{location.cta.label}</Button>
       </Box>
     </Stack>
   )

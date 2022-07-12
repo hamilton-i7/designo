@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "locations": {
-      "displayName": "Location CTA",
-      "type": "component",
-      "repeatable": true,
-      "component": "navigation.location-cta"
-    },
     "cta": {
       "type": "component",
       "repeatable": false,
@@ -37,6 +31,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "locations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.location-cta"
     }
   }
 }

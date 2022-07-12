@@ -37,6 +37,13 @@ module.exports = createCoreController("api::contact.contact", ({ strapi }) => ({
                 desktop: true,
               },
             },
+            pattern: {
+              populate: {
+                mobile: true,
+                tablet: true,
+                desktop: true,
+              },
+            },
           },
         },
       },
