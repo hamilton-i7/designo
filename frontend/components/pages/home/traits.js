@@ -59,7 +59,7 @@ const TraitItem = ({ trait }) => {
               sm: theme.spacing(2),
               lg: theme.spacing(4),
             }),
-            mt: theme => ({ xs: theme.spacing(6), lg: theme.spacing(0) }),
+            mt: theme => ({ xs: theme.spacing(6), lg: 0 }),
           }}>
           {trait.title}
         </Typography>

@@ -9,7 +9,7 @@ import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import { GlobalContext } from './_app'
 
-const LeafPatternTop = ({ pattern }) => {
+export const LeafPatternTop = ({ pattern }) => {
   return (
     <Box
       sx={{
@@ -33,23 +33,23 @@ const LeafPatternBottom = ({ pattern }) => {
     <Box
       sx={{
         position: 'absolute',
-        width: '100rem',
+        width: '102rem',
         height: '59.4rem',
         right: 0,
-        bottom: '0',
+        bottom: '57rem',
         display: { xs: 'none', lg: 'block' },
         zIndex: -1,
         '::before': {
           content: '""',
           position: 'absolute',
           right: 0,
-          bottom: '57rem',
+          bottom: 0,
           background: `no-repeat url(${pattern.url})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           transform: 'rotate(180deg)',
-          width: '102rem',
-          height: '59.4rem',
+          width: '100%',
+          height: '100%',
         },
       }}
     />
@@ -63,8 +63,8 @@ const Home = ({ content }) => {
 
   return (
     <>
-      <LeafPatternTop pattern={pattern} />
       <Seo seo={seo} />
+      <LeafPatternTop pattern={pattern} />
       <FullHero
         title={hero.title}
         description={hero.description}

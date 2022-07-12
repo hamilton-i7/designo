@@ -7,7 +7,7 @@ import { splitText } from '../../../lib/text'
 import { useTabletScreenMatcher } from '../../../lib/responsive'
 import { useTheme } from '@mui/material'
 
-const TraitItem = ({ trait }) => {
+const TraitItem = ({ trait, reverseLayout = false }) => {
   const image = getStrapiMedia(trait.image)
   const pattern = getStrapiMedia(trait.pattern)
   const paragraphs = splitText(trait.description)
@@ -21,20 +21,39 @@ const TraitItem = ({ trait }) => {
       sx={{
         background: `no-repeat url(${pattern.url})`,
         backgroundSize: '55rem',
-        backgroundPosition: 'left bottom',
+        backgroundPosition: {
+          xs: 'left bottom',
+          lg: reverseLayout ? 'left bottom' : '35rem bottom',
+        },
         backgroundColor: theme => theme.palette.complementary.main,
         overflow: 'hidden',
         borderRadius: { sm: '1.5rem' },
-        mx: theme => ({ sm: theme.spacing(5) }),
+        mx: theme => ({ sm: theme.spacing(5), lg: theme.spacing(20.625) }),
+        flexDirection: { lg: reverseLayout ? 'row-reverse' : 'row' },
       }}>
-      <Box component='img' src={image.url} alt={image.alternativeText} />
+      <Box
+        component='img'
+        src={image.url}
+        alt={image.alternativeText}
+        sx={{
+          width: { lg: '45%', desktop: '100%' },
+        }}
+      />
       <Box
         sx={{
           m: theme => ({
             xs: theme.spacing(10, 3),
             tablet: theme.spacing(8, 7.25),
+            lg: theme.spacing(5),
+            desktop: theme.spacing(19.25, 12),
           }),
           textAlign: 'center',
+          [theme.breakpoints.up('lg')]: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'start',
+          },
         }}>
         <Typography
           variant='h1'

@@ -9,8 +9,14 @@ const Locations = ({ locations }) => {
   return (
     <Stack
       sx={{
-        m: theme => ({ xs: theme.spacing(15, 3), sm: theme.spacing(15, 5) }),
-        gap: theme => theme.spacing(6),
+        m: theme => ({
+          xs: theme.spacing(15, 3),
+          sm: theme.spacing(15, 5),
+          lg: theme.spacing(20, 20.625),
+        }),
+        gap: theme => ({ xs: theme.spacing(6), lg: 0 }),
+        flexDirection: { lg: 'row' },
+        justifyContent: { lg: 'space-between' },
       }}>
       {locations.map(location => (
         <LocationItem key={location.id} location={location} />

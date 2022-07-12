@@ -70,7 +70,7 @@ const Nav = ({ window, menu, children }) => {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <Box>
+    <Box position='relative' overflow='hidden'>
       <AppBar
         component='nav'
         aria-label='extended menu'
@@ -78,7 +78,7 @@ const Nav = ({ window, menu, children }) => {
         position='relative'
         sx={{
           backgroundColor: theme => theme.palette.common.white,
-          height: { xs: '9.6rem', desktop: '12rem' },
+          height: { xs: '9.6rem', lg: '15.5rem' },
           justifyContent: 'center',
           zIndex: theme => theme.zIndex.drawer + 1,
           px: theme => ({
