@@ -20,6 +20,9 @@ const lightTheme = createTheme({
       darkGrey: '#333136',
       lightGray: '#F1F3F5',
     },
+    neutral: {
+      main: '#FFF',
+    },
   },
   typography,
 })

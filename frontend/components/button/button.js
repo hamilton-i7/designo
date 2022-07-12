@@ -2,7 +2,7 @@ import React from 'react'
 import MuiButton from '@mui/material/Button'
 import Link from '../link'
 
-const Button = ({ onDark, href, children }) => {
+const Button = ({ onDark, href, children, sx }) => {
   const button = (
     <MuiButton
       variant='contained'
@@ -19,6 +19,7 @@ const Button = ({ onDark, href, children }) => {
           background: theme => theme.palette.secondary.main,
           color: theme => theme.palette.common.white,
         },
+        ...sx,
       }}>
       {children}
     </MuiButton>

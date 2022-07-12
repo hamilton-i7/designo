@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
 import Nav from './nav'
-import Toolbar from '@mui/material/Toolbar'
-import Box from '@mui/material/Box'
 import { GlobalContext } from '../pages/_app'
 import Footer from './footer'
+import { useRouter } from 'next/router'
 
 const Layout = ({ children }) => {
   const { menu, footer } = useContext(GlobalContext)
+  const router = useRouter()
+  const currentlyInContact = router.pathname === '/contact'
 
   return (
     <Nav menu={menu}>
       {children}
-      {/* <Box component='main' role='main' position='relative'>
-      </Box> */}
-      <Footer footer={footer} />
+      <Footer footer={footer} ctaSpacing={!currentlyInContact} />
     </Nav>
   )
 }

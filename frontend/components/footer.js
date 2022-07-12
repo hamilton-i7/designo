@@ -11,7 +11,7 @@ import { alpha } from '@mui/material'
 
 const footerTextOpacity = 0.5
 
-const Footer = ({ footer }) => {
+const Footer = ({ footer, ctaSpacing = true }) => {
   const logo = getStrapiMedia(footer.logo)
   const { address, contact } = footer
 
@@ -21,7 +21,7 @@ const Footer = ({ footer }) => {
       sx={{
         backgroundColor: theme => theme.palette.common.black,
         p: theme => ({
-          xs: theme.spacing(31.25, 3, 8),
+          xs: ctaSpacing ? theme.spacing(31.25, 3, 8) : theme.spacing(8, 3),
           sm: theme.spacing(31.25, 5, 10),
           lg: theme.spacing(31.25, 20.626, 9),
           xl: theme.spacing(31.25, 40, 9),
