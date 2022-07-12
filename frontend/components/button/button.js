@@ -2,11 +2,12 @@ import React from 'react'
 import MuiButton from '@mui/material/Button'
 import Link from '../link'
 
-const Button = ({ onDark, href, children, sx }) => {
+const Button = ({ onDark, href, onClick, children, sx }) => {
   const button = (
     <MuiButton
       variant='contained'
       disableElevation
+      onClick={onClick}
       sx={{
         p: '1.6rem 2.4rem',
         borderRadius: '0.8rem',

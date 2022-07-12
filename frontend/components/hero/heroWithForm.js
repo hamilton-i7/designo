@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -6,15 +6,36 @@ import TextField from '@mui/material/TextField'
 import Button from '../button/button'
 import { getStrapiMedia } from '../../lib/media'
 import { alpha } from '@mui/material'
+import InputAdornment from '@mui/material/InputAdornment'
+import ErrorIcon from '@mui/icons-material/Error'
 
-const DesignoTextField = ({ id, label, type, sx, multiline = false }) => {
+const DesignoTextField = ({
+  id,
+  label,
+  type,
+  multiline = false,
+  error = false,
+  errorMessage = '',
+  value,
+  handleChange,
+}) => {
   return (
     <TextField
       id={id}
       label={label}
       type={type}
+      value={value}
+      onChange={handleChange}
+      error={error}
       sx={{
+        '& .MuiInputBase-root.MuiInput-root:hover::before': {
+          borderBottom: theme => `0.2rem solid ${theme.palette.common.white}`,
+        },
         '& .MuiInput-root::before': {
+          borderColor: theme => theme.palette.common.white,
+        },
+        '& .MuiInput-root.Mui-error::after': {
+          color: theme => theme.palette.common.white,
           borderColor: theme => theme.palette.common.white,
         },
       }}
@@ -25,18 +46,63 @@ const DesignoTextField = ({ id, label, type, sx, multiline = false }) => {
       InputLabelProps={{
         sx: {
           color: theme => alpha(theme.palette.common.white, 0.5),
+          '&.Mui-error': {
+            color: 'inherit',
+          },
         },
       }}
       InputProps={{
         sx: {
-          color: theme => theme.palette.common.white,
+          color: 'inherit',
         },
+        endAdornment: error && (
+          <InputAdornment position='end'>
+            <Stack
+              direction='row'
+              alignItems='center'
+              sx={{
+                color: theme => theme.palette.common.white,
+                gap: theme => theme.spacing(1),
+              }}>
+              <Typography variant='overline'>{errorMessage}</Typography>
+              <ErrorIcon
+                sx={{
+                  fontSize: '2rem',
+                }}
+              />
+            </Stack>
+          </InputAdornment>
+        ),
       }}
     />
   )
 }
 
 const Form = ({ form, cta }) => {
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    message: false,
+  })
+
+  const handleChange = prop => e => {
+    setValues({ ...values, [prop]: e.target.value })
+  }
+  const handleSubmit = () => {
+    const fields = {}
+    for (const key in errors) {
+      fields[key] = !Boolean(values[key])
+    }
+    setErrors({ ...errors, ...fields })
+  }
+
   return (
     <Stack component='form' noValidate autoComplete='off'>
       <Stack
@@ -44,14 +110,41 @@ const Form = ({ form, cta }) => {
         sx={{
           gap: theme => theme.spacing(2),
         }}>
-        <DesignoTextField id='name' label={form.nameLabel} />
-        <DesignoTextField id='email' type='email' label={form.emailLabel} />
-        <DesignoTextField id='phone' type='tel' label={form.phoneLabel} />
+        <DesignoTextField
+          id='name'
+          label={form.nameLabel}
+          value={values.name}
+          handleChange={handleChange('name')}
+          error={errors.name}
+          errorMessage={form.errorMessage}
+        />
+        <DesignoTextField
+          id='email'
+          type='email'
+          label={form.emailLabel}
+          value={values.email}
+          handleChange={handleChange('email')}
+          error={errors.email}
+          errorMessage={form.errorMessage}
+        />
+        <DesignoTextField
+          id='phone'
+          type='tel'
+          label={form.phoneLabel}
+          value={values.phone}
+          handleChange={handleChange('phone')}
+          error={errors.phone}
+          errorMessage={form.errorMessage}
+        />
         <DesignoTextField
           variant='standard'
           id='message'
           label={form.messageLabel}
           multiline
+          value={values.message}
+          handleChange={handleChange('message')}
+          error={errors.message}
+          errorMessage={form.errorMessage}
         />
       </Stack>
       <Stack
@@ -62,6 +155,7 @@ const Form = ({ form, cta }) => {
         }}>
         <Button
           onDark
+          onClick={handleSubmit}
           sx={{
             p: theme => theme.spacing(2, 6),
           }}>
