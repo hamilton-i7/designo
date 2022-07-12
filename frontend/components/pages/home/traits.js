@@ -7,7 +7,6 @@ import { getStrapiMedia } from '../../../lib/media'
 const Traits = ({ traits }) => {
   return (
     <Stack
-      component='aside'
       sx={{
         mx: theme => ({
           xs: theme.spacing(3),

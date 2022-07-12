@@ -12,6 +12,9 @@ const lightTheme = createTheme({
     secondary: {
       main: '#FFAD9B',
     },
+    complementary: {
+      main: '#FDF3F0',
+    },
     common: {
       black: '#1D1C1E',
       darkGrey: '#333136',

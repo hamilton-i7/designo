@@ -23,22 +23,19 @@ const LocationItem = ({ location }) => {
 
   return (
     <Stack>
-      <Box
-        component='img'
-        src={image.url}
-        alt={image.alternativeText}
-        sx={{
-          background: `center / cover no-repeat url(${pattern.url})`,
-          width: '20.2rem',
-        }}
-      />
-      <Box
-        component='section'
-        sx={{
-          textAlign: { xs: 'center', sm: 'start', lg: 'center' },
-        }}>
+      <Box component='figure'>
+        <Box
+          component='img'
+          src={image.url}
+          alt={image.alternativeText}
+          sx={{
+            background: `center / cover no-repeat url(${pattern.url})`,
+            width: '20.2rem',
+          }}
+        />
         <Typography
           variant='h4'
+          component='figcaption'
           sx={{
             textTransform: 'uppercase',
             mb: theme => ({
@@ -48,10 +45,10 @@ const LocationItem = ({ location }) => {
             }),
             mt: theme => ({ xs: theme.spacing(6), lg: theme.spacing(0) }),
           }}>
-          {location.title}
+          {location.country}
         </Typography>
-        <Button href={location.cta.url}>{location.cta.label}</Button>
       </Box>
+      <Button href={location.cta.url}>{location.cta.label}</Button>
     </Stack>
   )
 }

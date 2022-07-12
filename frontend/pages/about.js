@@ -12,10 +12,12 @@ const About = ({ content }) => {
     <>
       <Seo seo={seo} />
       <HeroWithImage hero={hero} />
-      <TraitItem trait={traits[0]} />
-      <Locations locations={locations} />
-      <TraitItem trait={traits[1]} />
-      <Cta cta={cta} />
+      <main>
+        <TraitItem trait={traits[0]} />
+        <Locations locations={locations} />
+        <TraitItem trait={traits[1]} />
+        <Cta cta={cta} />
+      </main>
     </>
   )
 }

@@ -72,6 +72,13 @@ module.exports = createCoreController("api::about.about", ({ strapi }) => ({
                 desktop: true,
               },
             },
+            pattern: {
+              populate: {
+                mobile: true,
+                tablet: true,
+                desktop: true,
+              },
+            },
           },
         },
       },

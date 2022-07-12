@@ -1,10 +1,6 @@
 import { useTheme } from '@mui/material'
 import { getStrapiURL } from './api'
-import {
-  useLargeScreenMatcher,
-  useMediumScreenMatcher,
-  useSmallScreenMatcher,
-} from './responsive'
+import { useLargeScreenMatcher, useSmallScreenMatcher } from './responsive'
 
 /**
  *
