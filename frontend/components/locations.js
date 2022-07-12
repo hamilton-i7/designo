@@ -9,7 +9,7 @@ const Locations = ({ locations }) => {
   return (
     <Stack
       sx={{
-        m: theme => theme.spacing(15, 3),
+        m: theme => ({ xs: theme.spacing(15, 3), sm: theme.spacing(15, 5) }),
         gap: theme => theme.spacing(6),
       }}>
       {locations.map(location => (

@@ -1,7 +1,6 @@
 import React from 'react'
 import MuiButton from '@mui/material/Button'
 import Link from '../link'
-import { alpha } from '@mui/material'
 
 const Button = ({ onDark, href, children }) => {
   const button = (
@@ -11,6 +10,7 @@ const Button = ({ onDark, href, children }) => {
       sx={{
         p: '1.6rem 2.4rem',
         borderRadius: '0.8rem',
+        color: theme => theme.palette.common.white,
         ...(onDark && {
           backgroundColor: theme => theme.palette.common.white,
           color: theme => theme.palette.common.black,

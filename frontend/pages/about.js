@@ -1,5 +1,6 @@
 import React from 'react'
 import Cta from '../components/cta'
+import Box from '@mui/material/Box'
 import HeroWithImage from '../components/hero/heroWithImage'
 import Locations from '../components/locations'
 import TraitItem from '../components/pages/about/traitItem'
@@ -12,12 +13,16 @@ const About = ({ content }) => {
     <>
       <Seo seo={seo} />
       <HeroWithImage hero={hero} />
-      <main>
+      <Box
+        component='main'
+        sx={{
+          mt: theme => ({ sm: theme.spacing(15) }),
+        }}>
         <TraitItem trait={traits[0]} />
         <Locations locations={locations} />
         <TraitItem trait={traits[1]} />
         <Cta cta={cta} />
-      </main>
+      </Box>
     </>
   )
 }

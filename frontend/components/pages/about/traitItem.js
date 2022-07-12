@@ -4,11 +4,16 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { getStrapiMedia } from '../../../lib/media'
 import { splitText } from '../../../lib/text'
+import { useTabletScreenMatcher } from '../../../lib/responsive'
+import { useTheme } from '@mui/material'
 
 const TraitItem = ({ trait }) => {
   const image = getStrapiMedia(trait.image)
   const pattern = getStrapiMedia(trait.pattern)
   const paragraphs = splitText(trait.description)
+
+  const theme = useTheme()
+  const matchesTabletScreen = useTabletScreenMatcher(theme)
 
   return (
     <Stack
@@ -18,11 +23,17 @@ const TraitItem = ({ trait }) => {
         backgroundSize: '55rem',
         backgroundPosition: 'left bottom',
         backgroundColor: theme => theme.palette.complementary.main,
+        overflow: 'hidden',
+        borderRadius: { sm: '1.5rem' },
+        mx: theme => ({ sm: theme.spacing(5) }),
       }}>
       <Box component='img' src={image.url} alt={image.alternativeText} />
       <Box
         sx={{
-          m: theme => ({ xs: theme.spacing(10, 3) }),
+          m: theme => ({
+            xs: theme.spacing(10, 3),
+            tablet: theme.spacing(8, 7.25),
+          }),
           textAlign: 'center',
         }}>
         <Typography
@@ -35,7 +46,7 @@ const TraitItem = ({ trait }) => {
           {trait.title}
         </Typography>
         <Typography
-          variant='body2'
+          variant={matchesTabletScreen ? 'body1' : 'body2'}
           sx={{
             color: theme => theme.palette.common.darkGray,
           }}>

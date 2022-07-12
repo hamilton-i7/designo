@@ -81,11 +81,18 @@ const Nav = ({ window, menu, children }) => {
           height: { xs: '9.6rem', desktop: '12rem' },
           justifyContent: 'center',
           zIndex: theme => theme.zIndex.drawer + 1,
-          px: theme => ({ md: theme.spacing(5), lg: theme.spacing(20.625) }),
+          px: theme => ({
+            xs: theme.spacing(3),
+            sm: theme.spacing(5),
+            lg: theme.spacing(20.625),
+          }),
         }}>
         <Toolbar
           sx={{
             justifyContent: 'space-between',
+            '&.MuiToolbar-root': {
+              p: 0,
+            },
           }}>
           <Link href={logo.href}>
             <MuiLink
@@ -113,7 +120,7 @@ const Nav = ({ window, menu, children }) => {
             sx={{
               display: { xs: 'none', sm: 'flex' },
               gap: theme => ({
-                sm: theme.spacing(3),
+                sm: theme.spacing(1),
                 tablet: theme.spacing(5.25),
               }),
             }}>
