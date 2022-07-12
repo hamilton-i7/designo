@@ -13,7 +13,6 @@ export const breakpoints = {
     lg: 1200,
     desktop: 1440,
     xl: 1536,
-    tv: 2000,
   },
 }
 
