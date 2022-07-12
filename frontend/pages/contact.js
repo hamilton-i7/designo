@@ -1,14 +1,16 @@
 import React from 'react'
 import HeroWithForm from '../components/hero/heroWithForm'
 import Seo from '../components/seo'
+import Locations from '../components/locations'
 import { fetchAPI } from '../lib/api'
 
 const Contact = ({ content }) => {
-  const { seo, hero } = content.attributes
+  const { seo, hero, locations } = content.attributes
   return (
     <>
       <Seo seo={seo} />
       <HeroWithForm hero={hero} />
+      <Locations locations={locations} />
     </>
   )
 }
