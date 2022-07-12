@@ -2,7 +2,7 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../lib/media'
+import { getStrapiMedia } from '../../../lib/media'
 
 const Traits = ({ traits }) => {
   return (

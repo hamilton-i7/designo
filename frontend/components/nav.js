@@ -49,15 +49,17 @@ const Nav = ({ window, menu, children }) => {
         }}>
         {menu.links.map(link => (
           <ListItem key={link.id} disablePadding>
-            <ListItemButton sx={{ p: theme => theme.spacing(1.875, 3) }}>
-              <ListItemText
-                primary={link.label}
-                primaryTypographyProps={{
-                  variant: 'subtitle1',
-                  textTransform: 'uppercase',
-                }}
-              />
-            </ListItemButton>
+            <Link href={link.url}>
+              <ListItemButton sx={{ p: theme => theme.spacing(1.875, 3) }}>
+                <ListItemText
+                  primary={link.label}
+                  primaryTypographyProps={{
+                    variant: 'subtitle1',
+                    textTransform: 'uppercase',
+                  }}
+                />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
