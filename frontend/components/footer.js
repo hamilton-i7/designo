@@ -24,7 +24,7 @@ const Footer = ({ footer }) => {
           xs: theme.spacing(31.25, 3, 8),
           sm: theme.spacing(31.25, 5, 10),
           lg: theme.spacing(31.25, 20.626, 9),
-          tv: theme.spacing(31.25, 40, 9),
+          xl: theme.spacing(31.25, 40, 9),
         }),
         color: theme => theme.palette.common.white,
       }}>
@@ -38,15 +38,13 @@ const Footer = ({ footer }) => {
           justifyContent: { sm: 'space-between' },
         }}>
         <Link href={logo.href}>
-          <Box
-            component='img'
-            src={logo.url}
-            alt={logo.alternativeText}
+          <MuiLink
             sx={{
               width: '65%',
               maxWidth: '20.2rem',
-            }}
-          />
+            }}>
+            <Box component='img' src={logo.url} alt={logo.alternativeText} />
+          </MuiLink>
         </Link>
         <Divider
           sx={{

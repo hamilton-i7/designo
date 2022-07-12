@@ -27,7 +27,11 @@ const HeroWithImage = ({ hero }) => {
         },
         backgroundColor: theme => theme.palette.primary.main,
         color: theme => theme.palette.common.white,
-        mx: theme => ({ sm: theme.spacing(5), lg: theme.spacing(20.625) }),
+        mx: theme => ({
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          xl: theme.spacing(40),
+        }),
         borderRadius: { sm: '1.5rem' },
         overflow: 'hidden',
         flexDirection: { lg: 'row-reverse' },

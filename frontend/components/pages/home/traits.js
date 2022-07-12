@@ -12,7 +12,7 @@ const Traits = ({ traits }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          tv: theme.spacing(40),
+          xl: theme.spacing(40),
         }),
         gap: theme => ({ xs: theme.spacing(10), lg: theme.spacing(3.75) }),
         flexDirection: { lg: 'row' },

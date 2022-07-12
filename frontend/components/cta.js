@@ -33,7 +33,7 @@ const Cta = ({ cta }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          tv: theme.spacing(40),
+          xl: theme.spacing(40),
         }),
         position: 'relative',
         top: { xs: '19rem', lg: '7rem' },

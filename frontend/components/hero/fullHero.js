@@ -35,7 +35,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
         mx: theme => ({
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          tv: theme.spacing(40),
+          xl: theme.spacing(40),
         }),
         borderRadius: { sm: '1.5rem' },
         flexDirection: { desktop: 'row' },

@@ -85,6 +85,7 @@ const Nav = ({ window, menu, children }) => {
             xs: theme.spacing(3),
             sm: theme.spacing(5),
             lg: theme.spacing(20.625),
+            xl: theme.spacing(40),
           }),
         }}>
         <Toolbar

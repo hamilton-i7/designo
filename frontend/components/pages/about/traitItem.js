@@ -28,7 +28,11 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
         backgroundColor: theme => theme.palette.complementary.main,
         overflow: 'hidden',
         borderRadius: { sm: '1.5rem' },
-        mx: theme => ({ sm: theme.spacing(5), lg: theme.spacing(20.625) }),
+        mx: theme => ({
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          xl: theme.spacing(40),
+        }),
         flexDirection: { lg: reverseLayout ? 'row-reverse' : 'row' },
       }}>
       <Box

@@ -21,7 +21,7 @@ const Projects = ({ projects }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          tv: theme.spacing(40),
+          xl: theme.spacing(40),
         }),
       }}>
       {projects.map((project, index) => (

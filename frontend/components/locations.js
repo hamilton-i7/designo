@@ -13,6 +13,7 @@ const Locations = ({ locations }) => {
           xs: theme.spacing(15, 3),
           sm: theme.spacing(15, 5),
           lg: theme.spacing(20, 20.625),
+          xl: theme.spacing(40),
         }),
         gap: theme => ({ xs: theme.spacing(6), lg: 0 }),
         flexDirection: { lg: 'row' },
