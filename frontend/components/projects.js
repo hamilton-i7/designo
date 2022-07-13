@@ -21,7 +21,7 @@ const Projects = ({ projects }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: 'auto',
+          tv: 'auto',
         }),
         maxWidth: MAX_WIDTH,
       }}>

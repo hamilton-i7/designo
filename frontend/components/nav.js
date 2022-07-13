@@ -85,16 +85,14 @@ const Nav = ({ window, menu, children }) => {
         sx={{
           backgroundColor: theme => theme.palette.common.white,
           height: { xs: '9.6rem', lg: '15.5rem' },
+          alignItems: { xl: 'center' },
           justifyContent: 'center',
           zIndex: theme => theme.zIndex.drawer + 1,
           px: theme => ({
             xs: theme.spacing(3),
             sm: theme.spacing(5),
             lg: theme.spacing(20.625),
-            xl: 0,
           }),
-          mx: { xl: 'auto' },
-          maxWidth: MAX_WIDTH,
         }}>
         <Toolbar
           sx={{
@@ -102,6 +100,8 @@ const Nav = ({ window, menu, children }) => {
             '&.MuiToolbar-root': {
               p: 0,
             },
+            maxWidth: MAX_WIDTH,
+            width: '100%',
           }}>
           <Link href={logo.href}>
             <MuiLink

@@ -31,7 +31,7 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
         mx: theme => ({
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: 'auto',
+          tv: 'auto',
         }),
         flexDirection: { lg: reverseLayout ? 'row-reverse' : 'row' },
         maxWidth: MAX_WIDTH,

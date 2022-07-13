@@ -17,7 +17,7 @@ export const LeafPatternTop = ({ pattern }) => {
         width: '102rem',
         height: '59.4rem',
         left: 0,
-        top: '35rem',
+        top: '48rem',
         background: `no-repeat url(${pattern.url})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -36,7 +36,7 @@ const LeafPatternBottom = ({ pattern }) => {
         width: '102rem',
         height: '59.4rem',
         right: 0,
-        bottom: '57rem',
+        top: '188rem',
         display: { xs: 'none', lg: 'block' },
         zIndex: -1,
         '::before': {

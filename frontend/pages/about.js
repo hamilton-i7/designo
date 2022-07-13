@@ -18,7 +18,7 @@ const LeafPatternBottom = ({ pattern }) => {
         width: '102rem',
         height: '59.4rem',
         right: '-44rem',
-        bottom: '126rem',
+        top: '179rem',
         display: { xs: 'none', lg: 'block' },
         zIndex: -1,
         '::before': {

@@ -31,7 +31,7 @@ const HeroWithImage = ({ hero }) => {
           mx: theme => ({
             sm: theme.spacing(5),
             lg: theme.spacing(20.625),
-            xl: 'auto',
+            tv: 'auto',
           }),
           borderRadius: { sm: '1.5rem' },
           flexDirection: { lg: 'row-reverse' },

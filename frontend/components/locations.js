@@ -22,13 +22,12 @@ const Locations = ({ locations, component = 'div' }) => {
             xs: theme.spacing(15, 3),
             sm: theme.spacing(15, 5),
             lg: theme.spacing(20, 20.625),
-            xl: theme.spacing(40, 'auto'),
           }),
           gap: theme => ({ xs: theme.spacing(6), lg: 0 }),
           flexDirection: { lg: 'row' },
           justifyContent: { lg: 'space-between' },
           maxWidth: MAX_WIDTH,
-          [theme.breakpoints.up('xl')]: {
+          [theme.breakpoints.up('tv')]: {
             mx: 'auto',
           },
         }}>
