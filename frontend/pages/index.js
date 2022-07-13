@@ -72,11 +72,11 @@ const Home = ({ content }) => {
         image={getStrapiMedia(hero.image)}
         pattern={getStrapiMedia(hero.pattern)}
       />
-      <main>
+      <Box component='main' sx={{ width: '100%' }}>
         <Projects projects={projects} />
         <Traits traits={traits} />
         <Cta cta={cta} />
-      </main>
+      </Box>
       <LeafPatternBottom pattern={pattern} />
     </>
   )

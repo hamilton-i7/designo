@@ -13,7 +13,7 @@ const HeroWithImage = ({ hero }) => {
   const matchesTabletScreen = useTabletScreenMatcher(theme)
 
   return (
-    <Box component='header'>
+    <Box component='header' sx={{ width: '100%' }}>
       <Stack
         sx={{
           overflow: 'hidden',
@@ -31,7 +31,7 @@ const HeroWithImage = ({ hero }) => {
           mx: theme => ({
             sm: theme.spacing(5),
             lg: theme.spacing(20.625),
-            tv: 'auto',
+            lg: 'auto',
           }),
           borderRadius: { sm: '1.5rem' },
           flexDirection: { lg: 'row-reverse' },

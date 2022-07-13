@@ -27,7 +27,7 @@ const Locations = ({ locations, component = 'div' }) => {
           flexDirection: { lg: 'row' },
           justifyContent: { lg: 'space-between' },
           maxWidth: MAX_WIDTH,
-          [theme.breakpoints.up('tv')]: {
+          [theme.breakpoints.up('xl')]: {
             mx: 'auto',
           },
         }}>

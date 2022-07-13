@@ -51,6 +51,7 @@ const About = ({ content }) => {
         component='main'
         sx={{
           mt: theme => ({ sm: theme.spacing(15), lg: theme.spacing(20) }),
+          width: '100%',
         }}>
         <TraitItem trait={traits[0]} />
         <Locations locations={locations} />
