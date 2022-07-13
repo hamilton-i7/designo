@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -82,30 +82,37 @@ const DesignoTextField = ({
   )
 }
 
-const Form = ({ form, onSubmit }) => {
+const Form = ({ form, onSubmitSuccess }) => {
   const [values, setValues] = useState(setupInitialFieldValues(form.fields))
   const [errors, setErrors] = useState(setupInitialFieldErros(form.fields))
+  const [enableFeedback, setEnableFeedback] = useState(false)
 
   const handleChange = prop => e => {
     setValues({ ...values, [prop]: e.target.value })
+
+    if (enableFeedback) {
+      setErrors({
+        ...errors,
+        [prop]: !validateField(e.target.value, prop === 'email'),
+      })
+    }
   }
+
   const handleSubmit = () => {
+    setEnableFeedback(true)
     const fieldErrors = {}
+
+    // Validate each field and turn on its error state if necessary
     for (const key in errors) {
-      fieldErrors[key] = !Boolean(values[key])
+      fieldErrors[key] = !validateField(values[key], key === 'email')
     }
+    setErrors({ ...fieldErrors })
 
-    if (!EMAIL_REGEX.test(values.email)) {
-      setErrors({ ...fieldErrors, email: true })
-    } else {
-      setErrors(fieldErrors)
-    }
+    if (Object.keys(fieldErrors).some(key => fieldErrors[key])) return
 
-    // Show the success alert and cleanup the form if there are no errors in the form
-    if (Object.keys(errors).every(field => !fieldErrors[field])) {
-      setValues(setupInitialFieldValues(form.fields))
-      onSubmit()
-    }
+    setValues(setupInitialFieldValues(form.fields))
+    setEnableFeedback(false)
+    onSubmitSuccess()
   }
 
   return (
@@ -198,7 +205,7 @@ const HeroWithForm = ({ hero, form }) => {
           </Typography>
           <Typography variant='body2'>{hero.description}</Typography>
         </Box>
-        <Form form={form} onSubmit={() => setOpenAlert(true)} />
+        <Form form={form} onSubmitSuccess={() => setOpenAlert(true)} />
       </Stack>
     </Box>
   )
@@ -222,4 +229,11 @@ const setupInitialFieldErros = fields => {
     errors[field.name] = false
   })
   return errors
+}
+
+const validateField = (field, isEmail = false) => {
+  if (isEmail) {
+    return EMAIL_REGEX.test(field)
+  }
+  return Boolean(field)
 }
