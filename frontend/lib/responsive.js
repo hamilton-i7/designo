@@ -1,5 +1,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery'
 
+export const MAX_WIDTH = '150rem'
+
 export const useSmallScreenMatcher = theme =>
   useMediaQuery(theme.breakpoints.up('sm'))
 

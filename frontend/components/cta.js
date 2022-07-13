@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from './button/button'
 import { getStrapiMedia } from '../lib/media'
 import { useTheme } from '@mui/material'
-import { useSmallScreenMatcher } from '../lib/responsive'
+import { MAX_WIDTH, useSmallScreenMatcher } from '../lib/responsive'
 
 const Cta = ({ cta }) => {
   const pattern = getStrapiMedia(cta.pattern)
@@ -33,12 +33,13 @@ const Cta = ({ cta }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: theme.spacing(40),
+          xl: 'auto',
         }),
         position: 'relative',
         top: { xs: '19rem', lg: '7rem' },
         mt: theme => ({ xs: theme.spacing(-10), lg: theme.spacing(10) }),
         flexDirection: { lg: 'row' },
+        maxWidth: MAX_WIDTH,
       }}>
       <Box
         sx={{

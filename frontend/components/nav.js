@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import Toolbar from '@mui/material/Toolbar'
 import { getStrapiMedia } from '../lib/media'
-import { useSmallScreenMatcher } from '../lib/responsive'
+import { MAX_WIDTH, useSmallScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const mobileIconSize = '2rem'
@@ -70,7 +70,13 @@ const Nav = ({ window, menu, children }) => {
     window !== undefined ? () => window().document.body : undefined
 
   return (
-    <Box position='relative' overflow='hidden'>
+    <Stack
+      position='relative'
+      sx={{
+        height: '100vh',
+        overflowX: 'hidden',
+        alignItems: 'center',
+      }}>
       <AppBar
         component='nav'
         aria-label='extended menu'
@@ -85,8 +91,10 @@ const Nav = ({ window, menu, children }) => {
             xs: theme.spacing(3),
             sm: theme.spacing(5),
             lg: theme.spacing(20.625),
-            xl: theme.spacing(40),
+            xl: 0,
           }),
+          mx: { xl: 'auto' },
+          maxWidth: MAX_WIDTH,
         }}>
         <Toolbar
           sx={{
@@ -161,7 +169,7 @@ const Nav = ({ window, menu, children }) => {
         </Drawer>
       </Box>
       {children}
-    </Box>
+    </Stack>
   )
 }
 

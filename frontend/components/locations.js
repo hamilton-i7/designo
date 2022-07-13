@@ -4,25 +4,39 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { getStrapiMedia } from '../lib/media'
 import Button from './button/button'
+import { useTheme } from '@mui/material'
+import { MAX_WIDTH } from '../lib/responsive'
 
-const Locations = ({ locations }) => {
+const Locations = ({ locations, component = 'div' }) => {
+  const theme = useTheme()
+
   return (
-    <Stack
+    <Box
+      component={component}
       sx={{
-        m: theme => ({
-          xs: theme.spacing(15, 3),
-          sm: theme.spacing(15, 5),
-          lg: theme.spacing(20, 20.625),
-          xl: theme.spacing(40),
-        }),
-        gap: theme => ({ xs: theme.spacing(6), lg: 0 }),
-        flexDirection: { lg: 'row' },
-        justifyContent: { lg: 'space-between' },
+        width: '100%',
       }}>
-      {locations.map(location => (
-        <LocationItem key={location.id} location={location} />
-      ))}
-    </Stack>
+      <Stack
+        sx={{
+          m: theme => ({
+            xs: theme.spacing(15, 3),
+            sm: theme.spacing(15, 5),
+            lg: theme.spacing(20, 20.625),
+            xl: theme.spacing(40, 'auto'),
+          }),
+          gap: theme => ({ xs: theme.spacing(6), lg: 0 }),
+          flexDirection: { lg: 'row' },
+          justifyContent: { lg: 'space-between' },
+          maxWidth: MAX_WIDTH,
+          [theme.breakpoints.up('xl')]: {
+            mx: 'auto',
+          },
+        }}>
+        {locations.map(location => (
+          <LocationItem key={location.id} location={location} />
+        ))}
+      </Stack>
+    </Box>
   )
 }
 

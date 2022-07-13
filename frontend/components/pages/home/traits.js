@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { getStrapiMedia } from '../../../lib/media'
+import { MAX_WIDTH } from '../../../lib/responsive'
 
 const Traits = ({ traits }) => {
   return (
@@ -12,10 +13,11 @@ const Traits = ({ traits }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: theme.spacing(40),
+          xl: 'auto',
         }),
         gap: theme => ({ xs: theme.spacing(10), lg: theme.spacing(3.75) }),
         flexDirection: { lg: 'row' },
+        maxWidth: MAX_WIDTH,
       }}>
       {traits.map(trait => (
         <TraitItem key={trait.id} trait={trait} />

@@ -5,11 +5,12 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '../button/button'
 import { getStrapiMedia } from '../../lib/media'
-import { alpha } from '@mui/material'
+import { alpha, useTheme } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
 import ErrorIcon from '@mui/icons-material/Error'
 import Alert from '@mui/material/Alert'
 import Fade from '@mui/material/Fade'
+import { MAX_WIDTH, useLargeScreenMatcher } from '../../lib/responsive'
 
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -117,7 +118,13 @@ const Form = ({ form, onSubmitSuccess }) => {
   }
 
   return (
-    <Stack component='form' noValidate autoComplete='off'>
+    <Stack
+      component='form'
+      noValidate
+      autoComplete='off'
+      sx={{
+        width: { desktop: '100%' },
+      }}>
       <Stack
         component='section'
         sx={{
@@ -166,54 +173,76 @@ const HeroWithForm = ({ hero, form }) => {
   const pattern = getStrapiMedia(hero.pattern)
   const [openAlert, setOpenAlert] = useState(false)
 
+  const theme = useTheme()
+  const matchesLargeScreen = useLargeScreenMatcher(theme)
+
   return (
-    <Box sx={{ width: '100%' }}>
-      <Stack
-        component='header'
-        sx={{
-          background: `no-repeat url(${pattern.url})`,
-          backgroundSize: { xs: '80rem', sm: '70rem' },
-          backgroundPosition: { xs: '18% top', sm: '-18rem -12rem' },
-          backgroundColor: theme => theme.palette.primary.main,
-          color: theme => theme.palette.common.white,
-          p: theme => ({ xs: theme.spacing(9, 3), sm: theme.spacing(9, 7.25) }),
-          mx: theme => ({ sm: theme.spacing(5) }),
-          borderRadius: { sm: '1.5rem' },
-        }}>
-        <Fade in={openAlert}>
-          <Alert
-            onClose={() => setOpenAlert(false)}
-            elevation={3}
-            sx={{
-              alignItems: 'center',
-              position: 'fixed',
-              top: '5rem',
-              left: 0,
-              right: 0,
-              mx: theme => theme.spacing(5),
-              zIndex: theme => theme.zIndex.drawer + 1,
-            }}>
-            {form.successMessage}
-          </Alert>
-        </Fade>
-        <Box
+    <Stack
+      component='header'
+      sx={{
+        background: `no-repeat url(${pattern.url})`,
+        backgroundSize: { xs: '80rem', sm: '70rem', desktop: '64rem' },
+        backgroundPosition: {
+          xs: '18% top',
+          sm: '-18rem -12rem',
+          desktop: '-4rem -10rem',
+        },
+        backgroundColor: theme => theme.palette.primary.main,
+        color: theme => theme.palette.common.white,
+        p: theme => ({
+          xs: theme.spacing(9, 3),
+          sm: theme.spacing(9, 7.25),
+          lg: theme.spacing(8, 20.625),
+          desktop: theme.spacing(8, 12),
+        }),
+        mx: theme => ({
+          sm: theme.spacing(5),
+          lg: theme.spacing(20.625),
+          xl: 'auto',
+        }),
+        gap: theme => ({ desktop: theme.spacing(12) }),
+        borderRadius: { sm: '1.5rem' },
+        flexDirection: { desktop: 'row' },
+        alignItems: { desktop: 'center' },
+        maxWidth: MAX_WIDTH,
+      }}>
+      <Fade in={openAlert}>
+        <Alert
+          onClose={() => setOpenAlert(false)}
+          elevation={3}
           sx={{
-            textAlign: { xs: 'center', sm: 'start' },
-            mb: theme => theme.spacing(5),
+            alignItems: 'center',
+            position: 'absolute',
+            top: { xs: '11rem', lg: '16rem' },
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: theme => theme.zIndex.drawer + 1,
+            maxWidth: '30rem',
+            width: '80%',
           }}>
-          <Typography
-            variant='h1'
-            sx={{
-              mb: theme => theme.spacing(3),
-              textTransform: 'capitalize',
-            }}>
-            {hero.title}
-          </Typography>
-          <Typography variant='body2'>{hero.description}</Typography>
-        </Box>
-        <Form form={form} onSubmitSuccess={() => setOpenAlert(true)} />
-      </Stack>
-    </Box>
+          {form.successMessage}
+        </Alert>
+      </Fade>
+      <Box
+        sx={{
+          textAlign: { xs: 'center', sm: 'start' },
+          mb: theme => theme.spacing(5),
+          width: { desktop: '100%' },
+        }}>
+        <Typography
+          variant='h1'
+          sx={{
+            mb: theme => theme.spacing(3),
+            textTransform: 'capitalize',
+          }}>
+          {hero.title}
+        </Typography>
+        <Typography variant={matchesLargeScreen ? 'body1' : 'body2'}>
+          {hero.description}
+        </Typography>
+      </Box>
+      <Form form={form} onSubmitSuccess={() => setOpenAlert(true)} />
+    </Stack>
   )
 }
 

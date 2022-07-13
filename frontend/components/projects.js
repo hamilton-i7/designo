@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import ImageButton from './button/imageButton'
-import { useLargeScreenMatcher } from '../lib/responsive'
+import { MAX_WIDTH, useLargeScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const Projects = ({ projects }) => {
@@ -21,8 +21,9 @@ const Projects = ({ projects }) => {
           xs: theme.spacing(3),
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: theme.spacing(40),
+          xl: 'auto',
         }),
+        maxWidth: MAX_WIDTH,
       }}>
       {projects.map((project, index) => (
         <ProjectItem

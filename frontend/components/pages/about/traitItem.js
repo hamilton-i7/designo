@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { getStrapiMedia } from '../../../lib/media'
 import { splitText } from '../../../lib/text'
-import { useTabletScreenMatcher } from '../../../lib/responsive'
+import { MAX_WIDTH, useTabletScreenMatcher } from '../../../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const TraitItem = ({ trait, reverseLayout = false }) => {
@@ -31,9 +31,10 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
         mx: theme => ({
           sm: theme.spacing(5),
           lg: theme.spacing(20.625),
-          xl: theme.spacing(40),
+          xl: 'auto',
         }),
         flexDirection: { lg: reverseLayout ? 'row-reverse' : 'row' },
+        maxWidth: MAX_WIDTH,
       }}>
       <Box
         component='img'
