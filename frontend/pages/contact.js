@@ -5,11 +5,11 @@ import Locations from '../components/locations'
 import { fetchAPI } from '../lib/api'
 
 const Contact = ({ content }) => {
-  const { seo, hero, locations } = content.attributes
+  const { seo, hero, form, locations } = content.attributes
   return (
     <>
       <Seo seo={seo} />
-      <HeroWithForm hero={hero} />
+      <HeroWithForm hero={hero} form={form} />
       <Locations locations={locations} />
     </>
   )

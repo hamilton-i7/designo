@@ -8,6 +8,10 @@ import { getStrapiMedia } from '../../lib/media'
 import { alpha } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
 import ErrorIcon from '@mui/icons-material/Error'
+import Alert from '@mui/material/Alert'
+import Fade from '@mui/material/Fade'
+
+const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
 const DesignoTextField = ({
   id,
@@ -78,29 +82,30 @@ const DesignoTextField = ({
   )
 }
 
-const Form = ({ form, cta }) => {
-  const [values, setValues] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    message: false,
-  })
+const Form = ({ form, onSubmit }) => {
+  const [values, setValues] = useState(setupInitialFieldValues(form.fields))
+  const [errors, setErrors] = useState(setupInitialFieldErros(form.fields))
 
   const handleChange = prop => e => {
     setValues({ ...values, [prop]: e.target.value })
   }
   const handleSubmit = () => {
-    const fields = {}
+    const fieldErrors = {}
     for (const key in errors) {
-      fields[key] = !Boolean(values[key])
+      fieldErrors[key] = !Boolean(values[key])
     }
-    setErrors({ ...errors, ...fields })
+
+    if (!EMAIL_REGEX.test(values.email)) {
+      setErrors({ ...fieldErrors, email: true })
+    } else {
+      setErrors(fieldErrors)
+    }
+
+    // Show the success alert and cleanup the form if there are no errors in the form
+    if (Object.keys(errors).every(field => !fieldErrors[field])) {
+      setValues(setupInitialFieldValues(form.fields))
+      onSubmit()
+    }
   }
 
   return (
@@ -110,42 +115,23 @@ const Form = ({ form, cta }) => {
         sx={{
           gap: theme => theme.spacing(2),
         }}>
-        <DesignoTextField
-          id='name'
-          label={form.nameLabel}
-          value={values.name}
-          handleChange={handleChange('name')}
-          error={errors.name}
-          errorMessage={form.errorMessage}
-        />
-        <DesignoTextField
-          id='email'
-          type='email'
-          label={form.emailLabel}
-          value={values.email}
-          handleChange={handleChange('email')}
-          error={errors.email}
-          errorMessage={form.errorMessage}
-        />
-        <DesignoTextField
-          id='phone'
-          type='tel'
-          label={form.phoneLabel}
-          value={values.phone}
-          handleChange={handleChange('phone')}
-          error={errors.phone}
-          errorMessage={form.errorMessage}
-        />
-        <DesignoTextField
-          variant='standard'
-          id='message'
-          label={form.messageLabel}
-          multiline
-          value={values.message}
-          handleChange={handleChange('message')}
-          error={errors.message}
-          errorMessage={form.errorMessage}
-        />
+        {form.fields.map(field => (
+          <DesignoTextField
+            key={field.name}
+            id={field.name}
+            label={field.label}
+            type={field.type}
+            value={values[field.name]}
+            handleChange={handleChange(field.name)}
+            error={errors[field.name]}
+            errorMessage={
+              values[field.name].length === 0
+                ? field.emptyErrorMessage
+                : field.invalidErrorMessage
+            }
+            multiline={field.name === 'message'}
+          />
+        ))}
       </Stack>
       <Stack
         component='section'
@@ -159,44 +145,81 @@ const Form = ({ form, cta }) => {
           sx={{
             p: theme => theme.spacing(2, 6),
           }}>
-          {cta.label}
+          {form.button.label}
         </Button>
       </Stack>
     </Stack>
   )
 }
 
-const HeroWithForm = ({ hero }) => {
+const HeroWithForm = ({ hero, form }) => {
   const pattern = getStrapiMedia(hero.pattern)
+  const [openAlert, setOpenAlert] = useState(false)
 
   return (
-    <Stack
-      component='header'
-      sx={{
-        background: `no-repeat url(${pattern.url})`,
-        backgroundSize: { xs: '100%' },
-        backgroundPosition: { xs: 'center' },
-        backgroundColor: theme => theme.palette.primary.main,
-        color: theme => theme.palette.common.white,
-        p: theme => theme.spacing(9, 3),
-      }}>
-      <Box
+    <Box sx={{ width: '100%' }}>
+      <Stack
+        component='header'
         sx={{
-          textAlign: 'center',
-          mb: theme => theme.spacing(5),
+          background: `no-repeat url(${pattern.url})`,
+          backgroundSize: { xs: '100%' },
+          backgroundPosition: { xs: 'center' },
+          backgroundColor: theme => theme.palette.primary.main,
+          color: theme => theme.palette.common.white,
+          p: theme => theme.spacing(9, 3),
         }}>
-        <Typography
-          variant='h1'
+        <Fade in={openAlert}>
+          <Alert
+            onClose={() => setOpenAlert(false)}
+            elevation={3}
+            sx={{
+              alignItems: 'center',
+              position: 'fixed',
+              top: '5rem',
+              left: 0,
+              right: 0,
+              mx: theme => theme.spacing(5),
+              zIndex: theme => theme.zIndex.drawer + 1,
+            }}>
+            {form.successMessage}
+          </Alert>
+        </Fade>
+        <Box
           sx={{
-            mb: theme => theme.spacing(3),
+            textAlign: 'center',
+            mb: theme => theme.spacing(5),
           }}>
-          {hero.title}
-        </Typography>
-        <Typography variant='body2'>{hero.description}</Typography>
-      </Box>
-      <Form form={hero.form} cta={hero.cta} />
-    </Stack>
+          <Typography
+            variant='h1'
+            sx={{
+              mb: theme => theme.spacing(3),
+            }}>
+            {hero.title}
+          </Typography>
+          <Typography variant='body2'>{hero.description}</Typography>
+        </Box>
+        <Form form={form} onSubmit={() => setOpenAlert(true)} />
+      </Stack>
+    </Box>
   )
 }
 
 export default HeroWithForm
+
+const setupInitialFieldValues = fields => {
+  const values = {}
+
+  fields.forEach(field => {
+    values[field.name] = ''
+  })
+  return values
+}
+
+const setupInitialFieldErros = fields => {
+  const errors = {}
+
+  fields.forEach(field => {
+    errors[field.name] = false
+  })
+  return errors
+}
