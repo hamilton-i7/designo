@@ -14,15 +14,6 @@
       "type": "string",
       "required": false,
       "default": "#"
-    },
-    "variant": {
-      "type": "enumeration",
-      "enum": [
-        "text",
-        "outlined",
-        "contained"
-      ],
-      "default": "text"
     }
   }
 }

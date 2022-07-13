@@ -16,8 +16,6 @@ module.exports = createCoreController("api::contact.contact", ({ strapi }) => ({
         seo: true,
         hero: {
           populate: {
-            cta: true,
-            form: true,
             pattern: {
               populate: {
                 mobile: true,
@@ -25,6 +23,12 @@ module.exports = createCoreController("api::contact.contact", ({ strapi }) => ({
                 desktop: true,
               },
             },
+          },
+        },
+        form: {
+          populate: {
+            fields: true,
+            button: true,
           },
         },
         locations: {

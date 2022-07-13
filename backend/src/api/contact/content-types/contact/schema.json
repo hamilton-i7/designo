@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "hero": {
-      "displayName": "Hero Form",
-      "type": "component",
-      "repeatable": false,
-      "component": "hero.hero-form"
-    },
     "locations": {
       "type": "component",
       "repeatable": true,
@@ -27,6 +21,16 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.form"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.simple-hero"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_form_fields",
+  "info": {
+    "displayName": "Form field",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "emptyErrorMessage": {
+      "type": "string"
+    },
+    "invalidErrorMessage": {
+      "type": "string"
+    }
+  }
+}

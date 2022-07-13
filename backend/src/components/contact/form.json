@@ -7,20 +7,19 @@
   },
   "options": {},
   "attributes": {
-    "nameLabel": {
+    "fields": {
+      "displayName": "Form field",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.form-field"
+    },
+    "successMessage": {
       "type": "string"
     },
-    "emailLabel": {
-      "type": "string"
-    },
-    "phoneLabel": {
-      "type": "string"
-    },
-    "messageLabel": {
-      "type": "string"
-    },
-    "errorMessage": {
-      "type": "string"
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.link"
     }
   }
 }
