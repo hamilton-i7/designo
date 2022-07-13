@@ -1,14 +1,15 @@
 import React from 'react'
 import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
 import ImageButton from './button/imageButton'
 import { MAX_WIDTH, useLargeScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects, complexLayout = false }) => {
   const theme = useTheme()
   const matchesLargeScreen = useLargeScreenMatcher(theme)
 
-  return (
+  return complexLayout ? (
     <Box
       component='article'
       sx={{
@@ -37,6 +38,14 @@ const Projects = ({ projects }) => {
         />
       ))}
     </Box>
+  ) : (
+    <Grid container>
+      {projects.map(project => (
+        <Grid key={project.id} item xs={12} lg={6}>
+          <ProjectItem project={project} />
+        </Grid>
+      ))}
+    </Grid>
   )
 }
 

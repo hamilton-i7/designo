@@ -17,7 +17,7 @@ const lightTheme = createTheme({
     },
     common: {
       black: '#1D1C1E',
-      darkGrey: '#333136',
+      darkGray: '#333136',
       lightGray: '#F1F3F5',
     },
     neutral: {
