@@ -29,6 +29,7 @@ const DesignoTextField = ({
       label={label}
       type={type}
       value={value}
+      fullWidth
       onChange={handleChange}
       error={error}
       sx={{
@@ -120,6 +121,7 @@ const Form = ({ form, onSubmitSuccess }) => {
       <Stack
         component='section'
         sx={{
+          alignItems: 'center',
           gap: theme => theme.spacing(2),
         }}>
         {form.fields.map(field => (
@@ -144,13 +146,14 @@ const Form = ({ form, onSubmitSuccess }) => {
         component='section'
         sx={{
           alignItems: 'center',
-          mt: theme => theme.spacing(5),
+          mt: theme => ({ xs: theme.spacing(5), sm: theme.spacing(3) }),
         }}>
         <Button
           onDark
           onClick={handleSubmit}
           sx={{
             p: theme => theme.spacing(2, 6),
+            alignSelf: { sm: 'end' },
           }}>
           {form.button.label}
         </Button>
@@ -169,11 +172,13 @@ const HeroWithForm = ({ hero, form }) => {
         component='header'
         sx={{
           background: `no-repeat url(${pattern.url})`,
-          backgroundSize: { xs: '100%' },
-          backgroundPosition: { xs: 'center' },
+          backgroundSize: { xs: '80rem', sm: '70rem' },
+          backgroundPosition: { xs: '18% top', sm: '-18rem -12rem' },
           backgroundColor: theme => theme.palette.primary.main,
           color: theme => theme.palette.common.white,
-          p: theme => theme.spacing(9, 3),
+          p: theme => ({ xs: theme.spacing(9, 3), sm: theme.spacing(9, 7.25) }),
+          mx: theme => ({ sm: theme.spacing(5) }),
+          borderRadius: { sm: '1.5rem' },
         }}>
         <Fade in={openAlert}>
           <Alert
@@ -193,13 +198,14 @@ const HeroWithForm = ({ hero, form }) => {
         </Fade>
         <Box
           sx={{
-            textAlign: 'center',
+            textAlign: { xs: 'center', sm: 'start' },
             mb: theme => theme.spacing(5),
           }}>
           <Typography
             variant='h1'
             sx={{
               mb: theme => theme.spacing(3),
+              textTransform: 'capitalize',
             }}>
             {hero.title}
           </Typography>
