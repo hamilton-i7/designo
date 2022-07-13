@@ -20,6 +20,7 @@ const Footer = ({ footer, ctaSpacing = true }) => {
     <Stack
       component='footer'
       sx={{
+        alignItems: 'center',
         backgroundColor: theme => theme.palette.common.black,
         p: theme =>
           ctaSpacing
