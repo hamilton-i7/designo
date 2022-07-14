@@ -68,7 +68,7 @@ const DesignItem = ({ design }) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          width: { sm: '50%', lg: '100%' },
+          width: '100%',
         }}>
         <Typography
           gutterBottom
