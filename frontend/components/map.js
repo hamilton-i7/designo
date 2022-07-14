@@ -15,13 +15,14 @@ const Map = ({ center }) => {
   )
 }
 
-const DesignoMap = () => {
+const DesignoMap = ({ lat, lng }) => {
+  const center = { lat, lng }
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   })
 
   if (!isLoaded) return <div>Loading...</div>
-  return <Map />
+  return <Map center={center} />
 }
 
 export default DesignoMap

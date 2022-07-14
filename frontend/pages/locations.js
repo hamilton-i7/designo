@@ -1,6 +1,8 @@
 import React from 'react'
-import DesignoMap from '../components/map'
+import LocationsWithMap from '../components/location/locationsWithMap'
+import Cta from '../components/cta'
 import Seo from '../components/seo'
+import Box from '@mui/material/Box'
 import { fetchAPI } from '../lib/api'
 
 const Locations = ({ content }) => {
@@ -9,6 +11,10 @@ const Locations = ({ content }) => {
   return (
     <>
       <Seo seo={seo} />
+      <Box component='main' sx={{ width: '100%' }}>
+        <LocationsWithMap locations={locations} />
+        <Cta cta={cta} />
+      </Box>
     </>
   )
 }
