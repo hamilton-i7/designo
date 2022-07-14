@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_locations",
   "info": {
-    "displayName": "Location"
+    "displayName": "Location",
+    "description": ""
   },
   "options": {},
   "attributes": {

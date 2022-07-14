@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_addresses",
   "info": {
-    "displayName": "Address"
+    "displayName": "Address",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,6 +19,12 @@
       "type": "string"
     },
     "zipCode": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "string"
+    },
+    "lng": {
       "type": "string"
     }
   }
