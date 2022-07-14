@@ -74,7 +74,7 @@ const Nav = ({ window, menu, children }) => {
       position='relative'
       sx={{
         height: '100vh',
-        overflowX: 'hidden',
+        overflowX: 'clip',
         alignItems: 'center',
       }}>
       <AppBar

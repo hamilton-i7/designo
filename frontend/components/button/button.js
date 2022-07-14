@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import MuiButton from '@mui/material/Button'
 import Link from '../link'
 
-const Button = ({ onDark, href, onClick, children, sx }) => {
+const Button = forwardRef(({ onDark, href, onClick, children, sx }, ref) => {
   const button = (
     <MuiButton
+      ref={ref}
       variant='contained'
       disableElevation
       onClick={onClick}
@@ -29,6 +30,6 @@ const Button = ({ onDark, href, onClick, children, sx }) => {
     return <Link href={href}>{button}</Link>
   }
   return button
-}
+})
 
 export default Button
