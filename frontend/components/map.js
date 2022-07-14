@@ -29,7 +29,6 @@ const Map = ({ center }) => {
 
 const DesignoMap = ({ lat, lng }) => {
   const center = useMemo(() => ({ lat, lng }), [])
-  const theme = useTheme()
   // TODO: Restrict API access
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
