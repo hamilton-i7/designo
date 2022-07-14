@@ -48,6 +48,16 @@ const DesignItem = ({ design }) => {
         flexDirection: { xs: 'column', sm: 'row', lg: 'column' },
         borderRadius: '1.5rem',
         width: '100%',
+        cursor: 'pointer',
+        ':hover .MuiCardContent-root': {
+          backgroundColor: theme => theme.palette.primary.main,
+          color: theme => theme.palette.common.white,
+          transition: theme => theme.transitions.create('background-color'),
+        },
+        ':hover .MuiCardContent-root > *': {
+          color: theme => theme.palette.common.white,
+          transition: theme => theme.transitions.create('color'),
+        },
       }}>
       <CardMedia
         component='img'
