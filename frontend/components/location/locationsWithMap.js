@@ -6,6 +6,7 @@ import Address from '../text/address'
 import Contact from '../text/contact'
 import DesignoMap from '../map'
 import { MAX_WIDTH } from '../../lib/responsive'
+import { getStrapiMedia } from '../../lib/media'
 
 const LocationsWithMap = ({ locations, sx }) => {
   return (
@@ -35,6 +36,7 @@ export default LocationsWithMap
 
 const LocationWithMapItem = ({ location, inverseLayout }) => {
   const { address, contact } = location
+  const pattern = getStrapiMedia(location.pattern)
 
   return (
     <Stack
@@ -47,6 +49,12 @@ const LocationWithMapItem = ({ location, inverseLayout }) => {
       }}>
       <Box
         sx={{
+          background: `no-repeat url(${pattern.url})`,
+          backgroundSize: { xs: '60rem', sm: '55rem' },
+          backgroundPosition: {
+            xs: 'right top',
+            sm: 'left bottom',
+          },
           backgroundColor: theme => theme.palette.complementary.main,
           p: theme => ({
             xs: theme.spacing(10, 3),

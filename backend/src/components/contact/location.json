@@ -18,6 +18,11 @@
       "type": "component",
       "repeatable": false,
       "component": "contact.contact"
+    },
+    "pattern": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.media"
     }
   }
 }

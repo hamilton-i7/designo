@@ -22,6 +22,13 @@ module.exports = createCoreController(
               populate: {
                 address: true,
                 contact: true,
+                pattern: {
+                  populate: {
+                    mobile: true,
+                    tablet: true,
+                    desktop: true,
+                  },
+                },
               },
             },
             cta: {
