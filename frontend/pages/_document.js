@@ -1,5 +1,7 @@
 import React from 'react'
 import { Html, Head, Main, NextScript } from 'next/document'
+import { GlobalStyles, CssBaseline } from '@mui/material'
+import { globalStyles } from '../styles/globals'
 
 const Document = () => {
   return (
@@ -9,12 +11,14 @@ const Document = () => {
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
-          crossOrigin='true'
+          crossorigin='anonymous'
         />
         <link
           href='https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;1,400&display=swap'
           rel='stylesheet'
         />
+        <CssBaseline />
+        <GlobalStyles styles={globalStyles} />
       </Head>
       <body>
         <Main />

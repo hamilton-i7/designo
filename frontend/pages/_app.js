@@ -3,8 +3,7 @@ import Head from 'next/head'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import { createContext } from 'react'
-import { GlobalStyles, ThemeProvider, CssBaseline } from '@mui/material'
-import { globalStyles } from '../styles/globals'
+import { ThemeProvider } from '@mui/material'
 import lightTheme from '../styles/theme/lightTheme'
 import Layout from '../components/layout'
 
@@ -21,8 +20,6 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel='icon' href={faviconUrl} />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
-        <CssBaseline />
-        <GlobalStyles styles={globalStyles} />
         <Layout>
           <Component {...pageProps} />
         </Layout>

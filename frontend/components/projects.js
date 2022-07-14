@@ -10,7 +10,6 @@ const Projects = ({ projects, complexLayout = false, sx }) => {
 
   return (
     <Box
-      component='article'
       sx={{
         display: 'grid',
         gap: theme => theme.spacing(3),
