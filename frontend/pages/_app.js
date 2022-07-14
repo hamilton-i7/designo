@@ -7,6 +7,7 @@ import { GlobalStyles, ThemeProvider, CssBaseline } from '@mui/material'
 import { globalStyles } from '../styles/globals'
 import lightTheme from '../styles/theme/lightTheme'
 import Layout from '../components/layout'
+import ScrollToTop from '../lib/navigation'
 
 export const GlobalContext = createContext({})
 
@@ -20,6 +21,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <link rel='icon' href={faviconUrl} />
       </Head>
+      {/* <ScrollToTop /> */}
       <GlobalContext.Provider value={global.attributes}>
         <CssBaseline />
         <GlobalStyles styles={globalStyles} />
