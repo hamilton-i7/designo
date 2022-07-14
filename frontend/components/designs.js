@@ -6,13 +6,13 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import { getStrapiMedia } from '../lib/media'
 
-const Designs = ({ designs }) => {
+const Designs = ({ designs, sx }) => {
   return (
     <Grid
       container
       sx={{
-        p: theme => ({ xs: theme.spacing(12, 3) }),
         gap: theme => ({ xs: theme.spacing(5) }),
+        ...sx,
       }}>
       {designs.map(design => (
         <Grid key={design.id} item xs={12} lg={4}>

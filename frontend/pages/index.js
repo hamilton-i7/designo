@@ -73,7 +73,19 @@ const Home = ({ content }) => {
         pattern={getStrapiMedia(hero.pattern)}
       />
       <Box component='main' sx={{ width: '100%' }}>
-        <Projects projects={projects} complexLayout />
+        <Projects
+          projects={projects}
+          complexLayout
+          sx={{
+            my: theme => ({ xs: theme.spacing(15), lg: theme.spacing(20) }),
+            mx: theme => ({
+              xs: theme.spacing(3),
+              sm: theme.spacing(5),
+              lg: theme.spacing(20.625),
+              xl: 'auto',
+            }),
+          }}
+        />
         <Traits traits={traits} />
         <Cta cta={cta} />
       </Box>

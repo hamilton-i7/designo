@@ -13,7 +13,6 @@ const ImageButton = ({ project, sx }) => {
     <Link href={project.url}>
       <ButtonBase
         sx={{
-          position: 'relative',
           borderRadius: '1.5rem',
           color: theme => theme.palette.common.white,
           textTransform: 'uppercase',
@@ -26,6 +25,8 @@ const ImageButton = ({ project, sx }) => {
               backgroundColor: theme => theme.palette.primary.main,
             },
           },
+          minHeight: { xs: '25rem', sm: '20rem', lg: '30.8rem' },
+          width: 'auto',
           ...sx,
         }}>
         <ImageSrc url={backgroundImage.url} />

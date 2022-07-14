@@ -14,8 +14,23 @@ const WebDesign = ({ content }) => {
       <Seo seo={seo} />
       <SimpleHero hero={hero} />
       <Box component='main'>
-        <Designs designs={designs} />
-        <Projects projects={projects} />
+        <Designs
+          designs={designs}
+          sx={{
+            p: theme => ({ xs: theme.spacing(12, 3) }),
+          }}
+        />
+        <Projects
+          projects={projects}
+          sx={{
+            mx: theme => ({
+              xs: theme.spacing(3),
+              sm: theme.spacing(5),
+              lg: theme.spacing(20.625),
+              xl: 'auto',
+            }),
+          }}
+        />
         <Cta cta={cta} />
       </Box>
     </>
