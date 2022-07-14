@@ -13,11 +13,21 @@ const WebDesign = ({ content }) => {
     <>
       <Seo seo={seo} />
       <SimpleHero hero={hero} />
-      <Box component='main'>
+      <Box component='main' sx={{ width: '100%' }}>
         <Designs
           designs={designs}
           sx={{
-            p: theme => ({ xs: theme.spacing(12, 3) }),
+            mx: theme => ({
+              xs: theme.spacing(3),
+              sm: theme.spacing(5),
+              lg: theme.spacing(20.625),
+              xl: 'auto',
+            }),
+            my: theme => ({
+              xs: theme.spacing(12),
+              sm: theme.spacing(15),
+              sm: theme.spacing(20),
+            }),
           }}
         />
         <Projects

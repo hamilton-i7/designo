@@ -13,15 +13,15 @@ const SimpleHero = ({ hero }) => {
   const pattern = getStrapiMedia(hero.pattern)
 
   return (
-    <Box component='header'>
+    <Box component='header' sx={{ width: '100%' }}>
       <Stack
         sx={{
           background: `no-repeat url(${pattern.url})`,
-          backgroundSize: { xs: '88rem', sm: '70rem', desktop: '64rem' },
+          backgroundSize: { xs: '88rem', sm: '92rem', desktop: '85rem' },
           backgroundPosition: {
             xs: 'right top',
-            sm: '-18rem -12rem',
-            desktop: '-4rem -10rem',
+            sm: '-4rem -18rem',
+            desktop: '25rem -16rem',
           },
           backgroundColor: theme => theme.palette.primary.main,
           color: theme => theme.palette.common.white,
@@ -32,14 +32,22 @@ const SimpleHero = ({ hero }) => {
           }),
           p: theme => ({
             xs: theme.spacing(13.125, 3),
+            sm: theme.spacing(8, 18.125),
           }),
           gap: theme => ({ xs: theme.spacing(3) }),
           borderRadius: { sm: '1.5rem' },
           maxWidth: MAX_WIDTH,
           textAlign: 'center',
+          alignItems: 'center',
         }}>
-        <Typography variant='h1'>{hero.title}</Typography>
-        <Typography variant={matchesLargeScreen ? 'body1' : 'body2'}>
+        <Typography variant='h1' sx={{ textTransform: 'capitalize' }}>
+          {hero.title}
+        </Typography>
+        <Typography
+          variant={matchesLargeScreen ? 'body1' : 'body2'}
+          sx={{
+            maxWidth: '40rem',
+          }}>
           {hero.description}
         </Typography>
       </Stack>

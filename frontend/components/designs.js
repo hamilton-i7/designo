@@ -3,23 +3,35 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
 import { getStrapiMedia } from '../lib/media'
+import { MAX_WIDTH } from '../lib/responsive'
 
 const Designs = ({ designs, sx }) => {
   return (
-    <Grid
-      container
+    <Box
+      rowSpacing={{ xs: 5 }}
       sx={{
-        gap: theme => ({ xs: theme.spacing(5) }),
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: theme => ({
+          xs: theme.spacing(5),
+          sm: theme.spacing(4),
+          lg: theme.spacing(4, 3.75),
+        }),
+        maxWidth: MAX_WIDTH,
         ...sx,
       }}>
       {designs.map(design => (
-        <Grid key={design.id} item xs={12} lg={4}>
+        <Box
+          key={design.id}
+          sx={{
+            gridColumn: { xs: 'span 3', lg: 'span 1' },
+          }}>
           <DesignItem design={design} />
-        </Grid>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   )
 }
 
@@ -31,22 +43,39 @@ const DesignItem = ({ design }) => {
   return (
     <Card
       elevation={0}
-      sx={{ borderRadius: '1.5rem', maxWidth: '35rem', mx: 'auto' }}>
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row', lg: 'column' },
+        borderRadius: '1.5rem',
+        width: '100%',
+      }}>
       <CardMedia
         component='img'
         image={image.url}
         alt={image.alternativeText}
         sx={{
           height: { xs: '32rem', sm: '31rem', lg: '32rem' },
+          width: { sm: '50%', lg: '100%' },
+          maxWidth: { sm: '33.9rem', lg: '100%' },
         }}
       />
       <CardContent
+        component='section'
         sx={{
           backgroundColor: theme => theme.palette.complementary.main,
-          p: theme => ({ xs: theme.spacing(4) }),
+          p: theme => ({ xs: theme.spacing(4, 3.5) }),
           textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          width: { sm: '50%', lg: '100%' },
         }}>
-        <Typography gutterBottom variant='h4' component='div' color='primary'>
+        <Typography
+          gutterBottom
+          variant='h4'
+          component='h3'
+          color='primary'
+          sx={{ textTransform: 'uppercase' }}>
           {design.title}
         </Typography>
         <Typography
