@@ -13,3 +13,6 @@ export const useMediumScreenMatcher = theme =>
 
 export const useLargeScreenMatcher = theme =>
   useMediaQuery(theme.breakpoints.up('lg'))
+
+export const useDesktopScreenMatcher = theme =>
+  useMediaQuery(theme.breakpoints.up('desktop'))

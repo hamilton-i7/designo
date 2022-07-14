@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api'
+import {
+  useDesktopScreenMatcher,
+  useSmallScreenMatcher,
+} from '../lib/responsive'
+import { useTheme } from '@mui/material'
 
 const Map = ({ center }) => {
+  const theme = useTheme()
+  const matchesSmallScreen = useSmallScreenMatcher(theme)
+  const matchesDesktopScreen = useDesktopScreenMatcher(theme)
+
   return (
     <GoogleMap
-      zoom={10}
+      zoom={15}
       center={center}
       mapContainerStyle={{
         width: '100%',
-        height: '50rem',
+        height: matchesSmallScreen ? '32.6rem' : '32rem',
+        borderRadius: matchesSmallScreen ? '1.5rem' : 0,
+        maxWidth: matchesDesktopScreen ? '35rem' : 'initial',
       }}>
       <MarkerF position={center} />
     </GoogleMap>
@@ -16,11 +27,13 @@ const Map = ({ center }) => {
 }
 
 const DesignoMap = ({ lat, lng }) => {
-  const center = { lat, lng }
+  const center = useMemo(() => ({ lat, lng }), [])
+  // TODO: Restrict API access
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   })
 
+  // TODO: Add loading Spinner
   if (!isLoaded) return <div>Loading...</div>
   return <Map center={center} />
 }

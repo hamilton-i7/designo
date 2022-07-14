@@ -12,7 +12,17 @@ const Locations = ({ content }) => {
     <>
       <Seo seo={seo} />
       <Box component='main' sx={{ width: '100%' }}>
-        <LocationsWithMap locations={locations} />
+        <LocationsWithMap
+          locations={locations}
+          sx={{
+            mx: theme => ({
+              xs: theme.spacing(3),
+              sm: theme.spacing(5),
+              lg: theme.spacing(20.625),
+              xl: 'auto',
+            }),
+          }}
+        />
         <Cta cta={cta} />
       </Box>
     </>
