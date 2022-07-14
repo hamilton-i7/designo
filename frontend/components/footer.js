@@ -5,10 +5,11 @@ import { getStrapiMedia } from '../lib/media'
 import Link from './link'
 import MuiLink from '@mui/material/Link'
 import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
 import SocialButton from './button/socialButton'
 import { alpha } from '@mui/material'
 import { MAX_WIDTH } from '../lib/responsive'
+import Address from './text/address'
+import Contact from './text/contact'
 
 const footerTextOpacity = 0.5
 
@@ -110,36 +111,18 @@ const Footer = ({ footer, ctaSpacing = true }) => {
             alignItems: { tablet: 'end' },
             justifyContent: { tablet: 'space-between' },
           }}>
-          <Typography
-            variant='body1'
+          <Address
+            address={address}
             sx={{
               opacity: footerTextOpacity,
-            }}>
-            <strong>{address.hq}</strong>
-            <br />
-            {address.street}
-            <br />
-            {address.city && address.state
-              ? `${address.city}, ${address.state} ${address.zipCode}`
-              : address.city
-              ? `${address.city} ${address.zipCode}`
-              : address.state
-              ? `${address.state} ${address.zipCode}`
-              : address.zipCode}
-          </Typography>
-          <Typography
-            variant='body1'
+            }}
+          />
+          <Contact
+            contact={contact}
             sx={{
               opacity: footerTextOpacity,
-            }}>
-            <strong>
-              {contact.title} ({contact.hq})
-            </strong>
-            <br />
-            P: {contact.phone}
-            <br />
-            M: {contact.email}
-          </Typography>
+            }}
+          />
           <Stack
             direction='row'
             justifyContent='center'
