@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Cta from '../components/cta'
 import Box from '@mui/material/Box'
 import HeroWithImage from '../components/hero/heroWithImage'
-import Locations from '../components/locations'
+import LocationsWithCta from '../components/location/locationsWithCta'
 import TraitItem from '../components/pages/about/traitItem'
 import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
@@ -54,7 +54,7 @@ const About = ({ content }) => {
           width: '100%',
         }}>
         <TraitItem trait={traits[0]} />
-        <Locations locations={locations} />
+        <LocationsWithCta locations={locations} />
         <TraitItem trait={traits[1]} reverseLayout />
         <Cta cta={cta} />
       </Box>

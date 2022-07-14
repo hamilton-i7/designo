@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import HeroWithForm from '../components/hero/heroWithForm'
 import Seo from '../components/seo'
-import Locations from '../components/locations'
+import LocationsWithCta from '../components/location/locationsWithCta'
 import Box from '@mui/material/Box'
 import { fetchAPI } from '../lib/api'
 import { GlobalContext } from './_app'
@@ -36,7 +36,7 @@ const Contact = ({ content }) => {
       <Seo seo={seo} />
       <LeafPatternBottom pattern={pattern} />
       <HeroWithForm hero={hero} form={form} />
-      <Locations locations={locations} component='main' />
+      <LocationsWithCta locations={locations} component='main' />
     </>
   )
 }
