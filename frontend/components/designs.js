@@ -8,7 +8,12 @@ import { getStrapiMedia } from '../lib/media'
 
 const Designs = ({ designs }) => {
   return (
-    <Grid container>
+    <Grid
+      container
+      sx={{
+        p: theme => ({ xs: theme.spacing(12, 3) }),
+        gap: theme => ({ xs: theme.spacing(5) }),
+      }}>
       {designs.map(design => (
         <Grid key={design.id} item xs={12} lg={4}>
           <DesignItem design={design} />
@@ -24,7 +29,9 @@ const DesignItem = ({ design }) => {
   const image = getStrapiMedia(design.image)
 
   return (
-    <Card sx={{ maxWidth: '35rem' }}>
+    <Card
+      elevation={0}
+      sx={{ borderRadius: '1.5rem', maxWidth: '35rem', mx: 'auto' }}>
       <CardMedia
         component='img'
         image={image.url}
@@ -33,8 +40,13 @@ const DesignItem = ({ design }) => {
           height: { xs: '32rem', sm: '31rem', lg: '32rem' },
         }}
       />
-      <CardContent>
-        <Typography gutterBottom variant='h4' component='div'>
+      <CardContent
+        sx={{
+          backgroundColor: theme => theme.palette.complementary.main,
+          p: theme => ({ xs: theme.spacing(4) }),
+          textAlign: 'center',
+        }}>
+        <Typography gutterBottom variant='h4' component='div' color='primary'>
           {design.title}
         </Typography>
         <Typography
