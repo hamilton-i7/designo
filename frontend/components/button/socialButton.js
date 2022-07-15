@@ -10,19 +10,19 @@ const SocialButton = ({ socialMedia, url, sx }) => {
   let icon = ''
   switch (socialMedia) {
     case 'facebook':
-      icon = <FacebookIcon fontSize='inherit' />
+      icon = <FacebookIcon fontSize='inherit' titleAccess='facebook' />
       break
     case 'instagram':
-      icon = <InstagramIcon fontSize='inherit' />
+      icon = <InstagramIcon fontSize='inherit' titleAccess='instagram' />
       break
     case 'twitter':
-      icon = <TwitterIcon fontSize='inherit' />
+      icon = <TwitterIcon fontSize='inherit' titleAccess='twitter' />
       break
     case 'youtube':
-      icon = <YoutubeIcon fontSize='inherit' />
+      icon = <YoutubeIcon fontSize='inherit' titleAccess='youtube' />
       break
     default:
-      icon = <PinterestIcon fontSize='inherit' />
+      icon = <PinterestIcon fontSize='inherit' titleAccess='pinterest' />
   }
   return (
     <IconButton

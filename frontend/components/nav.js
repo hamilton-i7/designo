@@ -105,7 +105,6 @@ const Nav = ({ window, menu, children }) => {
           }}>
           <Link href={logo.href}>
             <MuiLink
-              aria-label={logo.alternativeText}
               sx={{
                 width: '60%',
                 maxWidth: '20.2rem',
