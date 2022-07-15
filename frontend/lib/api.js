@@ -13,7 +13,7 @@ export const fetchAPI = async path => {
     const {
       data: { data },
     } = await axios.get(getStrapiURL(`/api${path}`))
-    return JSON.stringify(data)
+    return data
   } catch (error) {
     console.log(error)
   }
