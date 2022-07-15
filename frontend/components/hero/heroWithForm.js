@@ -48,7 +48,7 @@ const DesignoTextField = ({
       variant='standard'
       color='neutral'
       multiline={multiline}
-      minRows={multiline ? 5 : undefined}
+      minRows={multiline ? 5 : ''}
       InputLabelProps={{
         sx: {
           color: theme => alpha(theme.palette.common.white, 0.5),
