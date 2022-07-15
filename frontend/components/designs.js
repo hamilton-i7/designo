@@ -61,7 +61,7 @@ const DesignItem = ({ design }) => {
       }}>
       <CardMedia
         component='img'
-        image={image.url}
+        image={image.src}
         alt={image.alternativeText}
         sx={{
           height: { xs: '32rem', sm: '31rem', lg: '32rem' },

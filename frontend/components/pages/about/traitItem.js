@@ -19,7 +19,7 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
     <Stack
       component='section'
       sx={{
-        background: `no-repeat url(${pattern.url})`,
+        background: `no-repeat url(${pattern.src})`,
         backgroundSize: '55rem',
         backgroundPosition: {
           xs: 'left bottom',
@@ -38,7 +38,7 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
       }}>
       <Box
         component='img'
-        src={image.url}
+        src={image.src}
         alt={image.alternativeText}
         sx={{
           width: { lg: '45%', desktop: '100%' },

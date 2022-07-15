@@ -16,7 +16,7 @@ const SimpleHero = ({ hero }) => {
     <Box component='header' sx={{ width: '100%' }}>
       <Stack
         sx={{
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundSize: { xs: '88rem', sm: '92rem', desktop: '85rem' },
           backgroundPosition: {
             xs: 'right top',

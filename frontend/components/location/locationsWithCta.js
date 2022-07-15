@@ -54,10 +54,10 @@ const LocationItem = ({ location }) => {
       <Box component='figure'>
         <Box
           component='img'
-          src={image.url}
+          src={image.src}
           alt={image.alternativeText}
           sx={{
-            background: `center / cover no-repeat url(${pattern.url})`,
+            background: `center / cover no-repeat url(${pattern.src})`,
             width: '20.2rem',
             mx: 'auto',
           }}

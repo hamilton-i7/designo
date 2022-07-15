@@ -180,7 +180,7 @@ const HeroWithForm = ({ hero, form }) => {
     <Box component='header' sx={{ width: '100%' }}>
       <Stack
         sx={{
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundSize: { xs: '80rem', sm: '70rem', desktop: '64rem' },
           backgroundPosition: {
             xs: '18% top',

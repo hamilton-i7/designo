@@ -64,7 +64,7 @@ const Footer = ({ footer }) => {
                 width: '65%',
                 maxWidth: '20.2rem',
               }}>
-              <Box component='img' src={logo.url} alt={logo.alternativeText} />
+              <Box component='img' src={logo.src} alt={logo.alternativeText} />
             </MuiLink>
           </Link>
           <Divider

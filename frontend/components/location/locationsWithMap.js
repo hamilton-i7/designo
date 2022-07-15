@@ -49,7 +49,7 @@ const LocationWithMapItem = ({ location, inverseLayout }) => {
       }}>
       <Box
         sx={{
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundSize: { xs: '60rem', sm: '55rem' },
           backgroundPosition: {
             xs: 'right top',

@@ -14,7 +14,7 @@ export const useStrapiMedia = media => {
   const { url, alternativeText } = media[device].data.attributes
   const imageUrl = url.startsWith('/') ? getStrapiURL(url) : url
   return {
-    url: imageUrl,
+    src: imageUrl,
     alternativeText,
     ...(href && {
       href,

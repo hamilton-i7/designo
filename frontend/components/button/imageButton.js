@@ -29,7 +29,7 @@ const ImageButton = ({ project, sx }) => {
           width: 'auto',
           ...sx,
         }}>
-        <ImageSrc url={backgroundImage.url} />
+        <ImageSrc url={backgroundImage.src} />
         <ImageBackdrop className='MuiImageBackdrop-root' />
         <ImageText
           primary={project.primaryText}

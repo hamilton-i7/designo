@@ -12,12 +12,12 @@ export const GlobalContext = createContext({})
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps
   const favicon = global.attributes.seo.favicon
-  const { url: faviconUrl } = useStrapiMedia(favicon)
+  const { src: faviconSrc } = useStrapiMedia(favicon)
 
   return (
     <ThemeProvider theme={lightTheme}>
       <Head>
-        <link rel='icon' href={faviconUrl} />
+        <link rel='icon' href={faviconSrc} />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
         <Layout>

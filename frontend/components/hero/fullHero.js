@@ -18,7 +18,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
           overflow: 'hidden',
           alignItems: { xs: 'center', desktop: 'end' },
           textAlign: { xs: 'center', desktop: 'start' },
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundPosition: {
             xs: 'left 65%',
             tablet: '155% 65%',
@@ -66,7 +66,7 @@ const FullHero = ({ title, description, cta, image, pattern }) => {
         </Stack>
         <Box
           sx={{
-            background: `no-repeat url(${image.url})`,
+            background: `no-repeat url(${image.src})`,
             backgroundPosition: { xs: 'top' },
             backgroundSize: { xs: '145%' },
             width: { xs: '32.7rem' },

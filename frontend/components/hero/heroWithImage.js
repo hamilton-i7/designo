@@ -17,7 +17,7 @@ const HeroWithImage = ({ hero }) => {
       <Stack
         sx={{
           overflow: 'hidden',
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundSize: { xs: '85rem', tablet: '64rem', desktop: '63rem' },
           backgroundPosition: {
             xs: 'right -95%',
@@ -43,7 +43,7 @@ const HeroWithImage = ({ hero }) => {
         }}>
         <Box
           component='img'
-          src={image.url}
+          src={image.src}
           alt={image.alternativeText}
           sx={{ width: { lg: '45%', desktop: '100%' } }}
         />

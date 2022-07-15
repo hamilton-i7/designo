@@ -26,7 +26,7 @@ const LeafPatternBottom = ({ pattern }) => {
           position: 'absolute',
           right: 0,
           bottom: 0,
-          background: `no-repeat url(${pattern.url})`,
+          background: `no-repeat url(${pattern.src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           width: '100%',

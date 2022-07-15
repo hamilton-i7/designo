@@ -32,7 +32,7 @@ const Designo404 = ({ content }) => {
       <Seo seo={seo} />
       <Box
         component='img'
-        src={notFoundImage.url}
+        src={notFoundImage.src}
         alt={notFoundImage.alternativeText}
         sx={{
           width: { md: '50%' },

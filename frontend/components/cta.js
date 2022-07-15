@@ -24,7 +24,7 @@ const Cta = ({ cta }) => {
           sm: theme.spacing(7.125),
           lg: theme.spacing(8, 12),
         }),
-        background: `no-repeat url(${pattern.url})`,
+        background: `no-repeat url(${pattern.src})`,
         backgroundSize: { xs: '240%', sm: '140%', lg: '75%' },
         backgroundPosition: { xs: 'right', sm: 'center', lg: 'right' },
         backgroundColor: theme => theme.palette.primary.main,

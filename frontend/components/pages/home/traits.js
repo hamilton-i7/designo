@@ -40,10 +40,10 @@ const TraitItem = ({ trait }) => {
       }}>
       <Box
         component='img'
-        src={image.url}
+        src={image.src}
         alt={image.alternativeText}
         sx={{
-          background: `center / cover no-repeat url(${pattern.url})`,
+          background: `center / cover no-repeat url(${pattern.src})`,
           width: '20.2rem',
         }}
       />
@@ -54,6 +54,7 @@ const TraitItem = ({ trait }) => {
         }}>
         <Typography
           variant='h4'
+          component='h3'
           sx={{
             textTransform: 'uppercase',
             mb: theme => ({

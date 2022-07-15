@@ -16,7 +16,7 @@ const LeafPatternBottom = ({ pattern }) => {
         height: '59.4rem',
         top: '98rem',
         right: 0,
-        background: `no-repeat url(${pattern.url})`,
+        background: `no-repeat url(${pattern.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: { xs: 'none', lg: 'block' },
