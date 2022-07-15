@@ -6,7 +6,7 @@ import axios from 'axios'
  * @returns {string} Full Strapi URL
  */
 export const getStrapiURL = (path = '') =>
-  `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${path}`
+  `${String(process.env.NEXT_PUBLIC_API_URL) || 'http://localhost:1337'}${path}`
 
 export const fetchAPI = async path => {
   try {
