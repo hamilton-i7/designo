@@ -10,12 +10,16 @@ import { alpha } from '@mui/material'
 import { MAX_WIDTH } from '../lib/responsive'
 import Address from './text/address'
 import Contact from './text/contact'
+import { useRouter } from 'next/router'
 
 const footerTextOpacity = 0.5
+const ctaSpacingPages = ['/contact', '/404']
 
-const Footer = ({ footer, ctaSpacing = true }) => {
+const Footer = ({ footer }) => {
+  const router = useRouter()
   const logo = getStrapiMedia(footer.logo)
   const { address, contact } = footer
+  const ctaSpacing = !ctaSpacingPages.includes(router.pathname)
 
   return (
     <Stack

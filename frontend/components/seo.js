@@ -1,15 +1,18 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import { getStrapiURL } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import { GlobalContext } from '../pages/_app'
 
 const Seo = ({ seo }) => {
+  const router = useRouter()
   const { seo: globalSeo } = useContext(GlobalContext)
   const { siteName, shareImage } = globalSeo
   const fullSeo = {
     siteName,
     shareImage: getStrapiMedia(shareImage),
+    url: getStrapiURL(router.asPath),
     ...seo,
   }
 
@@ -26,7 +29,7 @@ const Seo = ({ seo }) => {
       <meta property='og:image' content={fullSeo.shareImage.url} />
 
       <meta property='og:type' content={fullSeo.type} />
-      <meta property='og:url' content={getStrapiURL(fullSeo.url)} />
+      <meta property='og:url' content={fullSeo.url} />
     </Head>
   )
 }
