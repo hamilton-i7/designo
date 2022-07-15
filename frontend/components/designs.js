@@ -42,6 +42,7 @@ const DesignItem = ({ design }) => {
 
   return (
     <Card
+      component='article'
       elevation={0}
       sx={{
         display: 'flex',
