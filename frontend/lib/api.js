@@ -6,14 +6,14 @@ import axios from 'axios'
  * @returns {string} Full Strapi URL
  */
 export const getStrapiURL = (path = '') =>
-  `${String(process.env.NEXT_PUBLIC_API_URL) || 'http://localhost:1337'}${path}`
+  `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${path}`
 
 export const fetchAPI = async path => {
   try {
     const {
       data: { data },
     } = await axios.get(getStrapiURL(`/api${path}`))
-    return data
+    return JSON.stringify(data)
   } catch (error) {
     console.log(error)
   }
