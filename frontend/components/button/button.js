@@ -32,4 +32,6 @@ const Button = forwardRef(({ onDark, href, onClick, children, sx }, ref) => {
   return button
 })
 
+Button.displayName = 'Button'
+
 export default Button

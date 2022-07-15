@@ -2,13 +2,13 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 import { useTabletScreenMatcher, MAX_WIDTH } from '../../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const HeroWithImage = ({ hero }) => {
-  const image = getStrapiMedia(hero.image)
-  const pattern = getStrapiMedia(hero.pattern)
+  const image = useStrapiMedia(hero.image)
+  const pattern = useStrapiMedia(hero.pattern)
   const theme = useTheme()
   const matchesTabletScreen = useTabletScreenMatcher(theme)
 

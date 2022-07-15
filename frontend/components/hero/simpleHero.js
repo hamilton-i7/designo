@@ -4,13 +4,13 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { MAX_WIDTH, useLargeScreenMatcher } from '../../lib/responsive'
 import { useTheme } from '@mui/material'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 
 const SimpleHero = ({ hero }) => {
   const theme = useTheme()
   const matchesLargeScreen = useLargeScreenMatcher(theme)
 
-  const pattern = getStrapiMedia(hero.pattern)
+  const pattern = useStrapiMedia(hero.pattern)
 
   return (
     <Box component='header' sx={{ width: '100%' }}>

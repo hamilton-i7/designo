@@ -4,10 +4,10 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Link from '../link'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForwardIos'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 
 const ImageButton = ({ project, sx }) => {
-  const backgroundImage = getStrapiMedia(project.image)
+  const backgroundImage = useStrapiMedia(project.image)
 
   return (
     <Link href={project.url}>

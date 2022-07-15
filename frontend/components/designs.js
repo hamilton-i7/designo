@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import { MAX_WIDTH } from '../lib/responsive'
 
 const Designs = ({ designs, sx }) => {
@@ -38,7 +38,7 @@ const Designs = ({ designs, sx }) => {
 export default Designs
 
 const DesignItem = ({ design }) => {
-  const image = getStrapiMedia(design.image)
+  const image = useStrapiMedia(design.image)
 
   return (
     <Card

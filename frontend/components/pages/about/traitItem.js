@@ -2,14 +2,14 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../../../lib/media'
+import { useStrapiMedia } from '../../../lib/media'
 import { splitText } from '../../../lib/text'
 import { MAX_WIDTH, useTabletScreenMatcher } from '../../../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const TraitItem = ({ trait, reverseLayout = false }) => {
-  const image = getStrapiMedia(trait.image)
-  const pattern = getStrapiMedia(trait.pattern)
+  const image = useStrapiMedia(trait.image)
+  const pattern = useStrapiMedia(trait.pattern)
   const paragraphs = splitText(trait.description)
 
   const theme = useTheme()

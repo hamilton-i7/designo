@@ -3,12 +3,12 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from './button/button'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import { useTheme } from '@mui/material'
 import { MAX_WIDTH, useSmallScreenMatcher } from '../lib/responsive'
 
 const Cta = ({ cta }) => {
-  const pattern = getStrapiMedia(cta.pattern)
+  const pattern = useStrapiMedia(cta.pattern)
   const theme = useTheme()
   const matchesSmallScreen = useSmallScreenMatcher(theme)
 

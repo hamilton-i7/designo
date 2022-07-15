@@ -2,7 +2,7 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 import Button from '../button/button'
 import { useTheme } from '@mui/material'
 import { MAX_WIDTH } from '../../lib/responsive'
@@ -42,8 +42,8 @@ const LocationsWithCta = ({ locations, component = 'div' }) => {
 export default LocationsWithCta
 
 const LocationItem = ({ location }) => {
-  const image = getStrapiMedia(location.image)
-  const pattern = getStrapiMedia(location.pattern)
+  const image = useStrapiMedia(location.image)
+  const pattern = useStrapiMedia(location.pattern)
 
   return (
     <Stack

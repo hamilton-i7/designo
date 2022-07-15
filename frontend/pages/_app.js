@@ -1,7 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
 import { fetchAPI } from '../lib/api'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import { createContext } from 'react'
 import { ThemeProvider } from '@mui/material'
 import lightTheme from '../styles/theme/lightTheme'
@@ -12,7 +12,7 @@ export const GlobalContext = createContext({})
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps
   const favicon = global.attributes.seo.favicon
-  const { url: faviconUrl } = getStrapiMedia(favicon)
+  const { url: faviconUrl } = useStrapiMedia(favicon)
 
   return (
     <ThemeProvider theme={lightTheme}>

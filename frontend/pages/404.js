@@ -2,7 +2,7 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import Button from '../components/button/button'
 import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
@@ -10,7 +10,7 @@ import { MAX_WIDTH } from '../lib/responsive'
 
 const Designo404 = ({ content }) => {
   const { seo, title, description, link, image } = content.attributes
-  const notFoundImage = getStrapiMedia(image)
+  const notFoundImage = useStrapiMedia(image)
 
   return (
     <Stack

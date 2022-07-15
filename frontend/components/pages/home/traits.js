@@ -2,7 +2,7 @@ import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { getStrapiMedia } from '../../../lib/media'
+import { useStrapiMedia } from '../../../lib/media'
 import { MAX_WIDTH } from '../../../lib/responsive'
 
 const Traits = ({ traits }) => {
@@ -29,8 +29,8 @@ const Traits = ({ traits }) => {
 export default Traits
 
 const TraitItem = ({ trait }) => {
-  const image = getStrapiMedia(trait.image)
-  const pattern = getStrapiMedia(trait.pattern)
+  const image = useStrapiMedia(trait.image)
+  const pattern = useStrapiMedia(trait.pattern)
   return (
     <Stack
       alignItems='center'

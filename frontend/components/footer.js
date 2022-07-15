@@ -1,7 +1,7 @@
 import React from 'react'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import Link from './link'
 import MuiLink from '@mui/material/Link'
 import Divider from '@mui/material/Divider'
@@ -17,7 +17,7 @@ const ctaSpacingPages = ['/contact', '/404']
 
 const Footer = ({ footer }) => {
   const router = useRouter()
-  const logo = getStrapiMedia(footer.logo)
+  const logo = useStrapiMedia(footer.logo)
   const { address, contact } = footer
   const ctaSpacing = !ctaSpacingPages.includes(router.pathname)
 

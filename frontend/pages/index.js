@@ -6,7 +6,7 @@ import Projects from '../components/projects'
 import Seo from '../components/seo'
 import Traits from '../components/pages/home/traits'
 import { fetchAPI } from '../lib/api'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import { GlobalContext } from './_app'
 
 export const LeafPatternTop = ({ pattern }) => {
@@ -59,7 +59,7 @@ const LeafPatternBottom = ({ pattern }) => {
 const Home = ({ content }) => {
   const { seo, hero, projects, traits, cta } = content.attributes
   const { backgroundPattern } = useContext(GlobalContext)
-  const pattern = getStrapiMedia(backgroundPattern)
+  const pattern = useStrapiMedia(backgroundPattern)
 
   return (
     <>
@@ -69,8 +69,8 @@ const Home = ({ content }) => {
         title={hero.title}
         description={hero.description}
         cta={hero.cta}
-        image={getStrapiMedia(hero.image)}
-        pattern={getStrapiMedia(hero.pattern)}
+        image={useStrapiMedia(hero.image)}
+        pattern={useStrapiMedia(hero.pattern)}
       />
       <Box component='main' sx={{ width: '100%' }}>
         <Projects

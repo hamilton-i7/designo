@@ -6,7 +6,7 @@ import Address from '../text/address'
 import Contact from '../text/contact'
 import DesignoMap from '../map'
 import { MAX_WIDTH } from '../../lib/responsive'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 
 const LocationsWithMap = ({ locations, sx }) => {
   return (
@@ -36,7 +36,7 @@ export default LocationsWithMap
 
 const LocationWithMapItem = ({ location, inverseLayout }) => {
   const { address, contact } = location
-  const pattern = getStrapiMedia(location.pattern)
+  const pattern = useStrapiMedia(location.pattern)
 
   return (
     <Stack

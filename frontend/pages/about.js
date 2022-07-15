@@ -8,7 +8,7 @@ import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
 import { LeafPatternTop } from '.'
 import { GlobalContext } from './_app'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 
 const LeafPatternBottom = ({ pattern }) => {
   return (
@@ -40,7 +40,7 @@ const LeafPatternBottom = ({ pattern }) => {
 const About = ({ content }) => {
   const { seo, hero, traits, locations, cta } = content.attributes
   const { backgroundPattern } = useContext(GlobalContext)
-  const pattern = getStrapiMedia(backgroundPattern)
+  const pattern = useStrapiMedia(backgroundPattern)
 
   return (
     <>

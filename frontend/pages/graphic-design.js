@@ -7,7 +7,7 @@ import Designs from '../components/designs'
 import Projects from '../components/projects'
 import Cta from '../components/cta'
 import { GlobalContext } from './_app'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 
 const LeafPatternTop = ({ pattern }) => {
   return (
@@ -31,7 +31,7 @@ const LeafPatternTop = ({ pattern }) => {
 const GraphicDesign = ({ content }) => {
   const { seo, hero, designs, projects, cta } = content.attributes
   const { backgroundPattern } = useContext(GlobalContext)
-  const pattern = getStrapiMedia(backgroundPattern)
+  const pattern = useStrapiMedia(backgroundPattern)
 
   return (
     <>

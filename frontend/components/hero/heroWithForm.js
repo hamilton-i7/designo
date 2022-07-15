@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '../button/button'
-import { getStrapiMedia } from '../../lib/media'
+import { useStrapiMedia } from '../../lib/media'
 import { alpha, useTheme } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'
 import ErrorIcon from '@mui/icons-material/Error'
@@ -170,7 +170,7 @@ const Form = ({ form, onSubmitSuccess }) => {
 }
 
 const HeroWithForm = ({ hero, form }) => {
-  const pattern = getStrapiMedia(hero.pattern)
+  const pattern = useStrapiMedia(hero.pattern)
   const [openAlert, setOpenAlert] = useState(false)
 
   const theme = useTheme()

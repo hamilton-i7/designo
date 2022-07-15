@@ -13,14 +13,14 @@ import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import Toolbar from '@mui/material/Toolbar'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 import { MAX_WIDTH, useSmallScreenMatcher } from '../lib/responsive'
 import { useTheme } from '@mui/material'
 
 const mobileIconSize = '2rem'
 
 const Nav = ({ window, menu, children }) => {
-  const logo = getStrapiMedia(menu.logo)
+  const logo = useStrapiMedia(menu.logo)
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
 
   const theme = useTheme()

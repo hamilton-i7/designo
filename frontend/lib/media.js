@@ -7,8 +7,8 @@ import { useLargeScreenMatcher, useSmallScreenMatcher } from './responsive'
  * @param {object} media The source for the image
  * @returns Object containing the image's url and alternative text
  */
-export const getStrapiMedia = media => {
-  const device = getMediaDeviceSource(media)
+export const useStrapiMedia = media => {
+  const device = useMediaDeviceSource(media)
   const href = media.url
 
   const { url, alternativeText } = media[device].data.attributes
@@ -22,7 +22,7 @@ export const getStrapiMedia = media => {
   }
 }
 
-const getMediaDeviceSource = media => {
+const useMediaDeviceSource = media => {
   const theme = useTheme()
   const matchesSmallScreen = useSmallScreenMatcher(theme)
   const matchesLargeScreen = useLargeScreenMatcher(theme)

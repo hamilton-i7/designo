@@ -5,7 +5,7 @@ import LocationsWithCta from '../components/location/locationsWithCta'
 import Box from '@mui/material/Box'
 import { fetchAPI } from '../lib/api'
 import { GlobalContext } from './_app'
-import { getStrapiMedia } from '../lib/media'
+import { useStrapiMedia } from '../lib/media'
 
 const LeafPatternBottom = ({ pattern }) => {
   return (
@@ -29,7 +29,7 @@ const LeafPatternBottom = ({ pattern }) => {
 const Contact = ({ content }) => {
   const { seo, hero, form, locations } = content.attributes
   const { backgroundPattern } = useContext(GlobalContext)
-  const pattern = getStrapiMedia(backgroundPattern)
+  const pattern = useStrapiMedia(backgroundPattern)
 
   return (
     <>
