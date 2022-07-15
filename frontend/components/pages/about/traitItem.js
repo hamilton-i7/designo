@@ -77,7 +77,7 @@ const TraitItem = ({ trait, reverseLayout = false }) => {
           {paragraphs.map((paragraph, index) => (
             <React.Fragment key={index}>
               {paragraph}
-              {/* Add a line breaks unless it's the last paragraph */}
+              {/* Adds a line breaks unless it's the last paragraph */}
               {index !== paragraphs.length - 1 && (
                 <>
                   <br /> <br />
