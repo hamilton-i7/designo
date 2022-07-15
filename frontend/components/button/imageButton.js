@@ -12,6 +12,7 @@ const ImageButton = ({ project, sx }) => {
   return (
     <Link href={project.url}>
       <ButtonBase
+        aria-label={project.primaryText}
         sx={{
           borderRadius: '1.5rem',
           color: theme => theme.palette.common.white,

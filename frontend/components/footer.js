@@ -60,6 +60,7 @@ const Footer = ({ footer }) => {
           }}>
           <Link href={logo.href}>
             <MuiLink
+              aria-label={logo.alternativeText}
               sx={{
                 width: '65%',
                 maxWidth: '20.2rem',

@@ -27,6 +27,7 @@ const SocialButton = ({ socialMedia, url, sx }) => {
   return (
     <IconButton
       href={url}
+      arial-label={socialMedia}
       sx={{
         fontSize: '2.4rem',
         color: 'inherit',
