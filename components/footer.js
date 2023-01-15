@@ -100,8 +100,9 @@ const Footer = ({ footer }) => {
               }),
             }}>
             {navItems.map(item => (
-              <Link key={item.label} href={item.url}>
+              <Link href={item.url}>
                 <Typography
+                  key={item.label}
                   variant='subtitle2'
                   sx={{
                     color: theme => theme.palette.common.black,
