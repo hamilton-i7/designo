@@ -23,11 +23,11 @@ const navItems = [
   { label: 'Contact', url: '/contact' },
 ]
 const socials = [
-  <FacebookIcon sx={{ fontSize: '2.4rem' }} />,
-  <TwitterIcon sx={{ fontSize: '2.4rem' }} />,
-  <InstagramIcon sx={{ fontSize: '2.4rem' }} />,
-  <PinterestIcon sx={{ fontSize: '2.4rem' }} />,
-  <YoutubeIcon sx={{ fontSize: '2.4rem' }} />,
+  <FacebookIcon key={1} sx={{ fontSize: '2.4rem' }} />,
+  <TwitterIcon key={2} sx={{ fontSize: '2.4rem' }} />,
+  <InstagramIcon key={3} sx={{ fontSize: '2.4rem' }} />,
+  <PinterestIcon key={4} sx={{ fontSize: '2.4rem' }} />,
+  <YoutubeIcon key={5} sx={{ fontSize: '2.4rem' }} />,
 ]
 
 const Footer = ({ footer }) => {
@@ -99,10 +99,9 @@ const Footer = ({ footer }) => {
                 tablet: theme.spacing(5.25),
               }),
             }}>
-            {navItems.map(item => (
-              <Link href={item.url}>
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.url}>
                 <Typography
-                  key={item.label}
                   variant='subtitle2'
                   sx={{
                     color: theme => theme.palette.common.black,
