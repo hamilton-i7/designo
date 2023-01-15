@@ -1,0 +1,38 @@
+[
+  {
+    "imgSrc": {
+      "mobile": "/home/mobile/image-web-design.jpg",
+      "tablet": "/home/tablet/image-web-design.jpg",
+      "desktop": {
+        "large": "/home/desktop/image-web-design-large.jpg",
+        "default": "/home/desktop/image-web-design-small.jpg"
+      }
+    },
+    "text": "Web design",
+    "url": "/web-design"
+  },
+  {
+    "imgSrc": {
+      "mobile": "/home/mobile/image-app-design.jpg",
+      "tablet": "/home/tablet/image-app-design.jpg",
+      "desktop": {
+        "default": "/home/desktop/image-app-design.jpg",
+        "large": null
+      }
+    },
+    "text": "App design",
+    "url": "/app-design"
+  },
+  {
+    "imgSrc": {
+      "mobile": "/home/mobile/image-graphic-design.jpg",
+      "tablet": "/home/tablet/image-graphic-design.jpg",
+      "desktop": {
+        "default": "/home/desktop/image-graphic-design.jpg",
+        "large": null
+      }
+    },
+    "text": "Graphic design",
+    "url": "/graphic-design"
+  }
+]
