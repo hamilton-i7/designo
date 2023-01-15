@@ -4,7 +4,7 @@ import React from 'react'
 const Seo = ({ title, description, url }) => {
   return (
     <Head>
-      <title>{`Designo | ${title}`}</title>
+      <title>{title ? `Designo | ${title}` : 'Designo'}</title>
       <meta property='og:site_name' content='Designo' />
       <meta property='og:title' content={`Designo - ${title}`} />
 

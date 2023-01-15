@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '../components/button/button'
 import Seo from '../components/seo'
 import { MAX_WIDTH } from '../lib/responsive'
+import Link from '../components/link'
 
 const Designo404 = () => {
   return (
@@ -24,11 +25,11 @@ const Designo404 = () => {
         maxWidth: MAX_WIDTH,
         flex: 1,
       }}>
-      <Seo seo={seo} />
+      <Seo description='Seems like you lost your way' />
       <Box
         component='img'
-        src={notFoundImage.src}
-        alt={notFoundImage.alternativeText}
+        src='/shared/404.svg'
+        alt='Sad emoji'
         sx={{
           width: { md: '50%' },
         }}
@@ -41,10 +42,12 @@ const Designo404 = () => {
           alignItems: 'center',
         }}>
         <Typography variant='h1' color='primary'>
-          {title}
+          Are you lost?
         </Typography>
-        <Typography variant='body1'>{description}</Typography>
-        <Button href={link.url}>{link.label}</Button>
+        <Typography variant='body1'>Seems like you lost your way</Typography>
+        <Link href='/'>
+          <Button>Go back home</Button>
+        </Link>
       </Stack>
     </Stack>
   )
